@@ -28,7 +28,9 @@ function App() {
 
   return (
     <div className="App">
-    <TheHeader/>
+        <div class="mb-3">
+            <TheHeader/>
+        </div>
         <Router>
             <Switch path="/">
                 <Home/>

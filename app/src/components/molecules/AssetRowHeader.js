@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AssetRowHeader() {
     return (
-        <div class="row bg-dark rounded">
+        <div class="row bg-eth rounded text-white">
             <div class="col col-1">
                 Number
             </div>
