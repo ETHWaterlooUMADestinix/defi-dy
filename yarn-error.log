@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/jterrazz/.nvm/versions/node/v10.16.0/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add @0x/instant
+
+PATH: 
+  /Users/jterrazz/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@0x%2finstant: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:66926:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:140564:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:141536:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:141458:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1129:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
