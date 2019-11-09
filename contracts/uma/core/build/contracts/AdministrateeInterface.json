@@ -1,0 +1,241 @@
+{
+  "contractName": "AdministrateeInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "emergencyShutdown",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "remargin",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"emergencyShutdown\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"remargin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Interface that all derivative contracts expose to the admin.\"},\"userdoc\":{\"methods\":{\"emergencyShutdown()\":{\"notice\":\"Initiates the shutdown process, in case of an emergency.\"},\"remargin()\":{\"notice\":\"A core contract method called independently or as a part of other financial contract transactions. It pays fees and moves money between margin accounts to make sure they reflect the NAV of the contract.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol\":\"AdministrateeInterface\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol\":{\"keccak256\":\"0x7526b383b0c471a6a7b44a013a4a1f7e30538c698079c3f73881ed776466be48\",\"urls\":[\"bzzr://490e4139a3b126ead094232bdfd0207b328150050b03c5b8b480d23fee436c56\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\n\n/**\n * @title Interface that all derivative contracts expose to the admin.\n */\ninterface AdministrateeInterface {\n    /**\n     * @notice Initiates the shutdown process, in case of an emergency.\n     */\n    function emergencyShutdown() external;\n\n    /**\n     * @notice A core contract method called independently or as a part of other financial contract transactions. It\n     * pays fees and moves money between margin accounts to make sure they reflect the NAV of the contract.\n     */\n    function remargin() external;\n}\n",
+  "sourcePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol",
+    "exportedSymbols": {
+      "AdministrateeInterface": [
+        202
+      ]
+    },
+    "id": 203,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 195,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Interface that all derivative contracts expose to the admin.",
+        "fullyImplemented": false,
+        "id": 202,
+        "linearizedBaseContracts": [
+          202
+        ],
+        "name": "AdministrateeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Initiates the shutdown process, in case of an emergency.",
+            "id": 198,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emergencyShutdown",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 196,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:2:1"
+            },
+            "returnParameters": {
+              "id": 197,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "269:0:1"
+            },
+            "scope": 202,
+            "src": "232:38:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice A core contract method called independently or as a part of other financial contract transactions. It\npays fees and moves money between margin accounts to make sure they reflect the NAV of the contract.",
+            "id": 201,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remargin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 199,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:2:1"
+            },
+            "returnParameters": {
+              "id": 200,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "545:0:1"
+            },
+            "scope": 202,
+            "src": "517:29:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 203,
+        "src": "105:443:1"
+      }
+    ],
+    "src": "0:549:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol",
+    "exportedSymbols": {
+      "AdministrateeInterface": [
+        202
+      ]
+    },
+    "id": 203,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 195,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Interface that all derivative contracts expose to the admin.",
+        "fullyImplemented": false,
+        "id": 202,
+        "linearizedBaseContracts": [
+          202
+        ],
+        "name": "AdministrateeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Initiates the shutdown process, in case of an emergency.",
+            "id": 198,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emergencyShutdown",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 196,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:2:1"
+            },
+            "returnParameters": {
+              "id": 197,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "269:0:1"
+            },
+            "scope": 202,
+            "src": "232:38:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice A core contract method called independently or as a part of other financial contract transactions. It\npays fees and moves money between margin accounts to make sure they reflect the NAV of the contract.",
+            "id": 201,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remargin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 199,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:2:1"
+            },
+            "returnParameters": {
+              "id": 200,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "545:0:1"
+            },
+            "scope": 202,
+            "src": "517:29:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 203,
+        "src": "105:443:1"
+      }
+    ],
+    "src": "0:549:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-11-09T13:45:25.510Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Interface that all derivative contracts expose to the admin."
+  },
+  "userdoc": {
+    "methods": {
+      "emergencyShutdown()": {
+        "notice": "Initiates the shutdown process, in case of an emergency."
+      },
+      "remargin()": {
+        "notice": "A core contract method called independently or as a part of other financial contract transactions. It pays fees and moves money between margin accounts to make sure they reflect the NAV of the contract."
+      }
+    }
+  }
+}

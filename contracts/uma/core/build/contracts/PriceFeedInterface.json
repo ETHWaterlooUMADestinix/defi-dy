@@ -1,0 +1,751 @@
+{
+  "contractName": "PriceFeedInterface",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "price",
+          "type": "int256"
+        }
+      ],
+      "name": "PriceUpdated",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "identifier",
+          "type": "bytes32"
+        }
+      ],
+      "name": "isIdentifierSupported",
+      "outputs": [
+        {
+          "name": "isSupported",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "identifier",
+          "type": "bytes32"
+        }
+      ],
+      "name": "latestPrice",
+      "outputs": [
+        {
+          "name": "publishTime",
+          "type": "uint256"
+        },
+        {
+          "name": "price",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"identifier\",\"type\":\"bytes32\"}],\"name\":\"latestPrice\",\"outputs\":[{\"name\":\"publishTime\",\"type\":\"uint256\"},{\"name\":\"price\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"identifier\",\"type\":\"bytes32\"}],\"name\":\"isIdentifierSupported\",\"outputs\":[{\"name\":\"isSupported\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"identifier\",\"type\":\"bytes32\"},{\"indexed\":true,\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"price\",\"type\":\"int256\"}],\"name\":\"PriceUpdated\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"latestPrice(bytes32)\":{\"details\":\"Will revert if no prices have been published for this identifier.\"}},\"title\":\"This interface allows contracts to query unverified prices.\"},\"userdoc\":{\"methods\":{\"isIdentifierSupported(bytes32)\":{\"notice\":\"Whether this PriceFeeds provides prices for the given identifier.\"},\"latestPrice(bytes32)\":{\"notice\":\"Gets the latest time-price pair at which a price was published.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/PriceFeedInterface.sol\":\"PriceFeedInterface\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/PriceFeedInterface.sol\":{\"keccak256\":\"0xdf0e83d440ac3f3351f539ae0e2917bacdc08200c080affba77a444da0039aca\",\"urls\":[\"bzzr://471ca4ff4e0a2b42ce3927720dc8438e4fa58d94660431d8a61e42a23c11a569\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\n\n/**\n * @title This interface allows contracts to query unverified prices.\n */\ninterface PriceFeedInterface {\n    /**\n     * @notice Whether this PriceFeeds provides prices for the given identifier.\n     */\n    function isIdentifierSupported(bytes32 identifier) external view returns (bool isSupported);\n\n    /**\n     * @notice Gets the latest time-price pair at which a price was published.\n     * @dev Will revert if no prices have been published for this identifier.\n     */\n    function latestPrice(bytes32 identifier) external view returns (uint publishTime, int price);\n\n    /**\n     * @notice An event fired when a price is published.\n     */\n    event PriceUpdated(bytes32 indexed identifier, uint indexed time, int price);\n}\n",
+  "sourcePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/PriceFeedInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/PriceFeedInterface.sol",
+    "exportedSymbols": {
+      "PriceFeedInterface": [
+        2137
+      ]
+    },
+    "id": 2138,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2112,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title This interface allows contracts to query unverified prices.",
+        "fullyImplemented": false,
+        "id": 2137,
+        "linearizedBaseContracts": [
+          2137
+        ],
+        "name": "PriceFeedInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Whether this PriceFeeds provides prices for the given identifier.",
+            "id": 2119,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isIdentifierSupported",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2114,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2119,
+                  "src": "267:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2113,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "267:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "266:20:14"
+            },
+            "returnParameters": {
+              "id": 2118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2117,
+                  "name": "isSupported",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2119,
+                  "src": "310:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2116,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:18:14"
+            },
+            "scope": 2137,
+            "src": "236:92:14",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Gets the latest time-price pair at which a price was published.\n@dev Will revert if no prices have been published for this identifier.",
+            "id": 2128,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "latestPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2122,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2121,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2128,
+                  "src": "528:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2120,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "528:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "527:20:14"
+            },
+            "returnParameters": {
+              "id": 2127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2124,
+                  "name": "publishTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2128,
+                  "src": "571:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2123,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2126,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2128,
+                  "src": "589:9:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 2125,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:3:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "570:29:14"
+            },
+            "scope": 2137,
+            "src": "507:93:14",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": "@notice An event fired when a price is published.",
+            "id": 2136,
+            "name": "PriceUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2135,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2130,
+                  "indexed": true,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2136,
+                  "src": "698:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2129,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "698:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2132,
+                  "indexed": true,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2136,
+                  "src": "726:17:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2131,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "726:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2134,
+                  "indexed": false,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2136,
+                  "src": "745:9:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 2133,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "745:3:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "697:58:14"
+            },
+            "src": "679:77:14"
+          }
+        ],
+        "scope": 2138,
+        "src": "104:654:14"
+      }
+    ],
+    "src": "0:759:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/PriceFeedInterface.sol",
+    "exportedSymbols": {
+      "PriceFeedInterface": [
+        2137
+      ]
+    },
+    "id": 2138,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2112,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:14"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title This interface allows contracts to query unverified prices.",
+        "fullyImplemented": false,
+        "id": 2137,
+        "linearizedBaseContracts": [
+          2137
+        ],
+        "name": "PriceFeedInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Whether this PriceFeeds provides prices for the given identifier.",
+            "id": 2119,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isIdentifierSupported",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2114,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2119,
+                  "src": "267:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2113,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "267:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "266:20:14"
+            },
+            "returnParameters": {
+              "id": 2118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2117,
+                  "name": "isSupported",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2119,
+                  "src": "310:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2116,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:18:14"
+            },
+            "scope": 2137,
+            "src": "236:92:14",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Gets the latest time-price pair at which a price was published.\n@dev Will revert if no prices have been published for this identifier.",
+            "id": 2128,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "latestPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2122,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2121,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2128,
+                  "src": "528:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2120,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "528:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "527:20:14"
+            },
+            "returnParameters": {
+              "id": 2127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2124,
+                  "name": "publishTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2128,
+                  "src": "571:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2123,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2126,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2128,
+                  "src": "589:9:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 2125,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:3:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "570:29:14"
+            },
+            "scope": 2137,
+            "src": "507:93:14",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": "@notice An event fired when a price is published.",
+            "id": 2136,
+            "name": "PriceUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2135,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2130,
+                  "indexed": true,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2136,
+                  "src": "698:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2129,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "698:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2132,
+                  "indexed": true,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2136,
+                  "src": "726:17:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2131,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "726:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2134,
+                  "indexed": false,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2136,
+                  "src": "745:9:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 2133,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "745:3:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "697:58:14"
+            },
+            "src": "679:77:14"
+          }
+        ],
+        "scope": 2138,
+        "src": "104:654:14"
+      }
+    ],
+    "src": "0:759:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-11-09T13:45:25.540Z",
+  "devdoc": {
+    "methods": {
+      "latestPrice(bytes32)": {
+        "details": "Will revert if no prices have been published for this identifier."
+      }
+    },
+    "title": "This interface allows contracts to query unverified prices."
+  },
+  "userdoc": {
+    "methods": {
+      "isIdentifierSupported(bytes32)": {
+        "notice": "Whether this PriceFeeds provides prices for the given identifier."
+      },
+      "latestPrice(bytes32)": {
+        "notice": "Gets the latest time-price pair at which a price was published."
+      }
+    }
+  }
+}

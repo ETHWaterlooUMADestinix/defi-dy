@@ -1,0 +1,1021 @@
+{
+  "contractName": "OracleInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "requestPrice",
+      "outputs": [
+        {
+          "name": "expectedTime",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "identifier",
+          "type": "bytes32"
+        }
+      ],
+      "name": "isIdentifierSupported",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "hasPrice",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "name": "price",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"identifier\",\"type\":\"bytes32\"},{\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"requestPrice\",\"outputs\":[{\"name\":\"expectedTime\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"identifier\",\"type\":\"bytes32\"}],\"name\":\"isIdentifierSupported\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"identifier\",\"type\":\"bytes32\"},{\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"hasPrice\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"identifier\",\"type\":\"bytes32\"},{\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"getPrice\",\"outputs\":[{\"name\":\"price\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.\",\"methods\":{\"getPrice(bytes32,uint256)\":{\"details\":\"If the price is not available, the method reverts.\"},\"requestPrice(bytes32,uint256)\":{\"details\":\"Returns the time at which the user should expect the price to be resolved. 0 means the price has already been resolved.\"}},\"title\":\"Financial contract facing Oracle interface.\"},\"userdoc\":{\"methods\":{\"getPrice(bytes32,uint256)\":{\"notice\":\"Gets the price for `identifier` and `time` if it has already been requested and resolved.\"},\"hasPrice(bytes32,uint256)\":{\"notice\":\"Whether the price for `identifier` and `time` is available.\"},\"isIdentifierSupported(bytes32)\":{\"notice\":\"Whether the Oracle provides prices for this identifier.\"},\"requestPrice(bytes32,uint256)\":{\"notice\":\"Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/OracleInterface.sol\":\"OracleInterface\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/OracleInterface.sol\":{\"keccak256\":\"0xeeb96404a6bc3ae768d7f742adbd0134fdcfc94a1aee697396f5963dfd882194\",\"urls\":[\"bzzr://7498a64e0382829901addb50c14d2c067dbf6e36544cdc9e289655dd78b5ce77\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\n\n/**\n * @title Financial contract facing Oracle interface.\n * @dev Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.\n */\ninterface OracleInterface {\n\n    /**\n     * @notice Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\n     * @dev Returns the time at which the user should expect the price to be resolved. 0 means the price has already\n     * been resolved.\n     */\n    function requestPrice(bytes32 identifier, uint time) external returns (uint expectedTime);\n\n    /**\n     * @notice Whether the Oracle provides prices for this identifier.\n     */\n    function isIdentifierSupported(bytes32 identifier) external view returns (bool);\n\n    /**\n     * @notice Whether the price for `identifier` and `time` is available.\n     */\n    function hasPrice(bytes32 identifier, uint time) external view returns (bool);\n\n    /**\n     * @notice Gets the price for `identifier` and `time` if it has already been requested and resolved.\n     * @dev If the price is not available, the method reverts.\n     */\n    function getPrice(bytes32 identifier, uint time) external view returns (int price);\n}\n",
+  "sourcePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/OracleInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/OracleInterface.sol",
+    "exportedSymbols": {
+      "OracleInterface": [
+        2110
+      ]
+    },
+    "id": 2111,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2075,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Financial contract facing Oracle interface.\n@dev Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.",
+        "fullyImplemented": false,
+        "id": 2110,
+        "linearizedBaseContracts": [
+          2110
+        ],
+        "name": "OracleInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\n@dev Returns the time at which the user should expect the price to be resolved. 0 means the price has already\nbeen resolved.",
+            "id": 2084,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "requestPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2080,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2077,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2084,
+                  "src": "524:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2076,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2079,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2084,
+                  "src": "544:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2078,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "544:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "523:31:13"
+            },
+            "returnParameters": {
+              "id": 2083,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2082,
+                  "name": "expectedTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2084,
+                  "src": "573:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2081,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "573:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "572:19:13"
+            },
+            "scope": 2110,
+            "src": "502:90:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Whether the Oracle provides prices for this identifier.",
+            "id": 2091,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isIdentifierSupported",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2087,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2086,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2091,
+                  "src": "716:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2085,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "716:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "715:20:13"
+            },
+            "returnParameters": {
+              "id": 2090,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2089,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2091,
+                  "src": "759:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2088,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "759:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "758:6:13"
+            },
+            "scope": 2110,
+            "src": "685:80:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Whether the price for `identifier` and `time` is available.",
+            "id": 2100,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hasPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2096,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2093,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2100,
+                  "src": "880:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2092,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2095,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2100,
+                  "src": "900:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2094,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "900:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "879:31:13"
+            },
+            "returnParameters": {
+              "id": 2099,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2098,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2100,
+                  "src": "934:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2097,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "934:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "933:6:13"
+            },
+            "scope": 2110,
+            "src": "862:78:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Gets the price for `identifier` and `time` if it has already been requested and resolved.\n@dev If the price is not available, the method reverts.",
+            "id": 2109,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2105,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2102,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2109,
+                  "src": "1148:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2101,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1148:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2104,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2109,
+                  "src": "1168:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2103,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1168:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1147:31:13"
+            },
+            "returnParameters": {
+              "id": 2108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2107,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2109,
+                  "src": "1202:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 2106,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1202:3:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1201:11:13"
+            },
+            "scope": 2110,
+            "src": "1130:83:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2111,
+        "src": "202:1013:13"
+      }
+    ],
+    "src": "0:1216:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/OracleInterface.sol",
+    "exportedSymbols": {
+      "OracleInterface": [
+        2110
+      ]
+    },
+    "id": 2111,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2075,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Financial contract facing Oracle interface.\n@dev Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.",
+        "fullyImplemented": false,
+        "id": 2110,
+        "linearizedBaseContracts": [
+          2110
+        ],
+        "name": "OracleInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\n@dev Returns the time at which the user should expect the price to be resolved. 0 means the price has already\nbeen resolved.",
+            "id": 2084,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "requestPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2080,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2077,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2084,
+                  "src": "524:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2076,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2079,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2084,
+                  "src": "544:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2078,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "544:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "523:31:13"
+            },
+            "returnParameters": {
+              "id": 2083,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2082,
+                  "name": "expectedTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2084,
+                  "src": "573:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2081,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "573:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "572:19:13"
+            },
+            "scope": 2110,
+            "src": "502:90:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Whether the Oracle provides prices for this identifier.",
+            "id": 2091,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isIdentifierSupported",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2087,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2086,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2091,
+                  "src": "716:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2085,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "716:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "715:20:13"
+            },
+            "returnParameters": {
+              "id": 2090,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2089,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2091,
+                  "src": "759:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2088,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "759:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "758:6:13"
+            },
+            "scope": 2110,
+            "src": "685:80:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Whether the price for `identifier` and `time` is available.",
+            "id": 2100,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hasPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2096,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2093,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2100,
+                  "src": "880:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2092,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2095,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2100,
+                  "src": "900:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2094,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "900:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "879:31:13"
+            },
+            "returnParameters": {
+              "id": 2099,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2098,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2100,
+                  "src": "934:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2097,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "934:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "933:6:13"
+            },
+            "scope": 2110,
+            "src": "862:78:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Gets the price for `identifier` and `time` if it has already been requested and resolved.\n@dev If the price is not available, the method reverts.",
+            "id": 2109,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2105,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2102,
+                  "name": "identifier",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2109,
+                  "src": "1148:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2101,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1148:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2104,
+                  "name": "time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2109,
+                  "src": "1168:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2103,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1168:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1147:31:13"
+            },
+            "returnParameters": {
+              "id": 2108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2107,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2109,
+                  "src": "1202:9:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 2106,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1202:3:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1201:11:13"
+            },
+            "scope": 2110,
+            "src": "1130:83:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2111,
+        "src": "202:1013:13"
+      }
+    ],
+    "src": "0:1216:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-11-09T13:45:25.539Z",
+  "devdoc": {
+    "details": "Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.",
+    "methods": {
+      "getPrice(bytes32,uint256)": {
+        "details": "If the price is not available, the method reverts."
+      },
+      "requestPrice(bytes32,uint256)": {
+        "details": "Returns the time at which the user should expect the price to be resolved. 0 means the price has already been resolved."
+      }
+    },
+    "title": "Financial contract facing Oracle interface."
+  },
+  "userdoc": {
+    "methods": {
+      "getPrice(bytes32,uint256)": {
+        "notice": "Gets the price for `identifier` and `time` if it has already been requested and resolved."
+      },
+      "hasPrice(bytes32,uint256)": {
+        "notice": "Whether the price for `identifier` and `time` is available."
+      },
+      "isIdentifierSupported(bytes32)": {
+        "notice": "Whether the Oracle provides prices for this identifier."
+      },
+      "requestPrice(bytes32,uint256)": {
+        "notice": "Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair."
+      }
+    }
+  }
+}

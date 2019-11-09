@@ -1,0 +1,62 @@
+[
+  {
+    "contractName": "Migrations",
+    "address": "0x0734f5417b535194F9803a6231599bB091fE614A"
+  },
+  {
+    "contractName": "Finder",
+    "address": "0xb7d5837f067A371703d54eFC7523bE88380c45f2"
+  },
+  {
+    "contractName": "VotingToken",
+    "address": "0x703FE3Ab66EbbB7CF5480D8505860cB36ceEf383"
+  },
+  {
+    "contractName": "Voting",
+    "address": "0x1D06839C3FCE0e02e1319fdD58a0a6E1488b1d5E"
+  },
+  {
+    "contractName": "Registry",
+    "address": "0x585D3EcEa94322A856a75fADAa2147E101FB9d31"
+  },
+  {
+    "contractName": "ManualPriceFeed",
+    "address": "0x5Ec0eBb74C57794DE59AD0828A355BB11E8cb87e"
+  },
+  {
+    "contractName": "FinancialContractsAdmin",
+    "address": "0x86588a35B471909aEBdec67191BE0714ed65c907"
+  },
+  {
+    "contractName": "Store",
+    "address": "0x306F4D31D22aE8cb8f99d4Ce93CdA3A3065Cf1C9"
+  },
+  {
+    "contractName": "TokenizedDerivativeUtils",
+    "address": "0x28C20278508c3A2C9b8020a84A06eAefcc20Dc2b"
+  },
+  {
+    "contractName": "AddressWhitelist",
+    "address": "0x9b4e8dCf055Ec6FFB65a693CC28Fa196CCa5c273"
+  },
+  {
+    "contractName": "AddressWhitelist",
+    "address": "0xE50076c1AA90Fc955655D63f7a292a637A2c1401"
+  },
+  {
+    "contractName": "TokenizedDerivativeCreator",
+    "address": "0xE5cdb1635E84Cf1fF98affa1549439E7D81FA52A"
+  },
+  {
+    "contractName": "TestnetERC20",
+    "address": "0xB5E5D0F8C0cbA267CD3D7035d6AdC8eBA7Df7Cdd"
+  },
+  {
+    "contractName": "LeveragedReturnCalculator",
+    "address": "0x51667B9649fE46f8a4f2cDFc18473c1AF3663f67"
+  },
+  {
+    "contractName": "LeveragedReturnCalculator",
+    "address": "0x76e40D0f46e56BA98E8c4a790C0F37Dbc131EF72"
+  }
+]
