@@ -6,6 +6,9 @@ import AssetRow from "../molecules/AssetRow";
 import { SignerSubprovider, RPCSubprovider, Web3ProviderEngine } from '@0x/subproviders';
 import { Web3Wrapper } from '@0x/web3-wrapper';
 
+let tokenAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
+let walletAddress = "0x136F72c1b4F4d8Ed741B332Ea34E9C8633cB8E3F";
+
 export default function Home(props) {
     const [balance, setBalance] = useState(0)
 
@@ -28,8 +31,6 @@ export default function Home(props) {
                 "type":"function"
             }
         ];
-        let tokenAddress = "0x136F72c1b4F4d8Ed741B332Ea34E9C8633cB8E3F";
-        let walletAddress = "0x136F72c1b4F4d8Ed741B332Ea34E9C8633cB8E3F";
 
         // Get ERC20 Token contract instance
         // console.log(props.web3.eth.Contract)
@@ -51,9 +52,6 @@ export default function Home(props) {
         //         console.log(balance.toString());
         //     });
         // });
-
-
-
 
         const code = `
             zeroExInstant.render(
@@ -86,7 +84,7 @@ export default function Home(props) {
         }
 
         const code = `
-            const erc20TokenAddress = '0x6f2d6ff85efca691aad23d549771160a12f0a0fc';
+            const erc20TokenAddress = '${tokenAddress}';
             const erc20TokenAssetData = zeroExInstant.assetDataForERC20TokenAddress(erc20TokenAddress);
         
             zeroExInstant.render(
@@ -99,7 +97,7 @@ export default function Home(props) {
                         [erc20TokenAssetData]: {
                             assetProxyId: zeroExInstant.ERC20_PROXY_ID,
                             decimals: 18,
-                            symbol: 'DEDY',
+                            symbol: 'dedy',
                             name: 'Defi dy',
                             // primaryColor: '#F2F7FF', // Optional
                         },
@@ -119,9 +117,14 @@ export default function Home(props) {
             <AssetPreview totalLockedValue="$648.9M" dominancePercent="34%"/>
             <div className="mt-4 px-3">
                 <AssetRowHeader/>
-                <AssetRow name="name" index={1} category="Cat" locked={42} web3={props.web3}/>
+                <AssetRow name="DEDY - Defi dy" index={1} category="Future" locked="100k" web3={props.web3}/>
             </div>
             <div id="zeroExInstantContainer"></div>
+            <a href="http://localhost:3001/">
+                <button class="btn-primary">
+                    Exchange your tokens
+                </button>
+            </a>
         </main>
     )
 }
