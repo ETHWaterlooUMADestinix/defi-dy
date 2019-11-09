@@ -7,7 +7,6 @@ import { SignerSubprovider, RPCSubprovider, Web3ProviderEngine } from '@0x/subpr
 import { Web3Wrapper } from '@0x/web3-wrapper';
 
 let tokenAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
-let walletAddress = "0x136F72c1b4F4d8Ed741B332Ea34E9C8633cB8E3F";
 
 export default function Home(props) {
     const [balance, setBalance] = useState(0)
@@ -36,12 +35,18 @@ export default function Home(props) {
         // console.log(props.web3.eth.Contract)
         let MyContract = new props.web3.eth.Contract(minABI, tokenAddress);
 
-        MyContract.methods.balanceOf(walletAddress).call()
-            .then(function(result){
-                //the result holds your Token Balance that you can assign to a var
-                console.log(result)
-                return result;
-            });
+        props.web3.eth.getAccounts((error, accounts) => {
+            if (error) throw error;
+
+            let walletAddress = accounts[0];
+            MyContract.methods.balanceOf(walletAddress).call()
+                .then(function(result){
+                    //the result holds your Token Balance that you can assign to a var
+                    setBalance(result)
+                });
+        });
+
+
 
         // Call balanceOf function
         // contract.balanceOf(walletAddress, (error, balance) => {
@@ -124,6 +129,9 @@ export default function Home(props) {
                 <button class="btn-primary">
                     Exchange your tokens
                 </button>
+                <p>
+                    Current balance: {balance} dedy
+                </p>
             </a>
         </main>
     )
