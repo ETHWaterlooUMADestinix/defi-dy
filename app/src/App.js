@@ -17,7 +17,7 @@ import TheHeader from "./components/organisms/TheHeader";
 import Home from './components/pages/Home';
 
 function App() {
-    const fm = new Fortmatic('pk_test_7416A3AF50E1CF5E');
+    const fm = new Fortmatic('pk_test_7416A3AF50E1CF5E', 'ropsten');
     const web3 = new Web3(fm.getProvider());
 
   return (

@@ -58,7 +58,7 @@ export default function Home(props) {
         const code = `
             zeroExInstant.render(
                 {
-                    orderSource: 'https://api.radarrelay.com/0x/v2/',
+                    orderSource: 'https://api.openrelay.xyz/v2/',
                 },
                 'body',
             );
@@ -86,21 +86,22 @@ export default function Home(props) {
         }
 
         const code = `
-            const erc20TokenAddress = '0x8f2e097e79b1c51be9cba42658862f0192c3e487';
+            const erc20TokenAddress = '0x6f2d6ff85efca691aad23d549771160a12f0a0fc';
             const erc20TokenAssetData = zeroExInstant.assetDataForERC20TokenAddress(erc20TokenAddress);
         
             zeroExInstant.render(
                 {
                     orderSource: 'https://sra.bamboorelay.com/0x/v2/',
                     provider: window.provider,
-                    defaultSelectedAssetData: erc20TokenAddress,
+                    networkId: 4, // Rinkeby network ID
+                    // defaultSelectedAssetData: erc20TokenAddress,
                     additionalAssetMetaDataMap: {
                         [erc20TokenAssetData]: {
                             assetProxyId: zeroExInstant.ERC20_PROXY_ID,
                             decimals: 18,
-                            symbol: 'XXX',
-                            name: 'My Custom Token',
-                            primaryColor: '#F2F7FF', // Optional
+                            symbol: 'DEDY',
+                            name: 'Defi dy',
+                            // primaryColor: '#F2F7FF', // Optional
                         },
                     }
                 },
@@ -115,7 +116,6 @@ export default function Home(props) {
 
     return (
         <main className="container">
-            <button onClick={() => sellTest()}>Test</button>
             <AssetPreview totalLockedValue="$648.9M" dominancePercent="34%"/>
             <div className="mt-4 px-3">
                 <AssetRowHeader/>
