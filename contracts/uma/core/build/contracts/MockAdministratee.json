@@ -1,0 +1,591 @@
+{
+  "contractName": "MockAdministratee",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "timesEmergencyShutdown",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "timesRemargined",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "remargin",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "emergencyShutdown",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"emergencyShutdown\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"timesEmergencyShutdown\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"remargin\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"timesRemargined\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/test/MockAdministratee.sol\":\"MockAdministratee\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol\":{\"keccak256\":\"0x7526b383b0c471a6a7b44a013a4a1f7e30538c698079c3f73881ed776466be48\",\"urls\":[\"bzzr://490e4139a3b126ead094232bdfd0207b328150050b03c5b8b480d23fee436c56\"]},\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/test/MockAdministratee.sol\":{\"keccak256\":\"0x4b41f5b0a30602bf0d40ef7f68e66d76bdeca8ba8092e85b4bb74f039011ece2\",\"urls\":[\"bzzr://b4a514c8c9b9bbdfbaa345db7c93df874a577377ed8897680f38d0abe2ab154b\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060f28061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060465760003560e01c80633403c2fc14604b5780635d21f153146053578063bda02e7714606f578063bea002bc146077575b600080fd5b60516093565b005b605960a7565b6040518082815260200191505060405180910390f35b607560ad565b005b607d60c0565b6040518082815260200191505060405180910390f35b600160008154809291906001019190505550565b60015481565b6000808154809291906001019190505550565b6000548156fea165627a7a723058206aff77c008ad5fa552f2b03e29035a1d83c1f033898ca1b818c42b6414cc3f640029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060465760003560e01c80633403c2fc14604b5780635d21f153146053578063bda02e7714606f578063bea002bc146077575b600080fd5b60516093565b005b605960a7565b6040518082815260200191505060405180910390f35b607560ad565b005b607d60c0565b6040518082815260200191505060405180910390f35b600160008154809291906001019190505550565b60015481565b6000808154809291906001019190505550565b6000548156fea165627a7a723058206aff77c008ad5fa552f2b03e29035a1d83c1f033898ca1b818c42b6414cc3f640029",
+  "sourceMap": "161:284:33:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;161:284:33;;;;;;;",
+  "deployedSourceMap": "161:284:33:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;161:284:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;364:79;;;:::i;:::-;;254:34;;;:::i;:::-;;;;;;;;;;;;;;;;;;;295:63;;;:::i;:::-;;221:27;;;:::i;:::-;;;;;;;;;;;;;;;;;;;364:79;412:22;;:24;;;;;;;;;;;;;364:79::o;254:34::-;;;;:::o;295:63::-;334:15;;:17;;;;;;;;;;;;;295:63::o;221:27::-;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"../AdministrateeInterface.sol\";\n\n\n// A mock implementation of AdministrateeInterface, taking the place of a financial contract.\ncontract MockAdministratee is AdministrateeInterface {\n\n    uint public timesRemargined;\n    uint public timesEmergencyShutdown;\n\n    function remargin() external {\n        timesRemargined++;\n    }\n\n    function emergencyShutdown() external {\n        timesEmergencyShutdown++;\n    }\n}\n",
+  "sourcePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/test/MockAdministratee.sol",
+  "ast": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/test/MockAdministratee.sol",
+    "exportedSymbols": {
+      "MockAdministratee": [
+        10393
+      ]
+    },
+    "id": 10394,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10371,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:33"
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol",
+        "file": "../AdministrateeInterface.sol",
+        "id": 10372,
+        "nodeType": "ImportDirective",
+        "scope": 10394,
+        "sourceUnit": 203,
+        "src": "25:39:33",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10373,
+              "name": "AdministrateeInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 202,
+              "src": "191:22:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                "typeString": "contract AdministrateeInterface"
+              }
+            },
+            "id": 10374,
+            "nodeType": "InheritanceSpecifier",
+            "src": "191:22:33"
+          }
+        ],
+        "contractDependencies": [
+          202
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 10393,
+        "linearizedBaseContracts": [
+          10393,
+          202
+        ],
+        "name": "MockAdministratee",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 10376,
+            "name": "timesRemargined",
+            "nodeType": "VariableDeclaration",
+            "scope": 10393,
+            "src": "221:27:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 10375,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "221:4:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10378,
+            "name": "timesEmergencyShutdown",
+            "nodeType": "VariableDeclaration",
+            "scope": 10393,
+            "src": "254:34:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 10377,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "254:4:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10384,
+              "nodeType": "Block",
+              "src": "324:34:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10382,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "334:17:33",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 10381,
+                      "name": "timesRemargined",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10376,
+                      "src": "334:15:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 10383,
+                  "nodeType": "ExpressionStatement",
+                  "src": "334:17:33"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10385,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remargin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10379,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "312:2:33"
+            },
+            "returnParameters": {
+              "id": 10380,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "324:0:33"
+            },
+            "scope": 10393,
+            "src": "295:63:33",
+            "stateMutability": "nonpayable",
+            "superFunction": 201,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10391,
+              "nodeType": "Block",
+              "src": "402:41:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10389,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "412:24:33",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 10388,
+                      "name": "timesEmergencyShutdown",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10378,
+                      "src": "412:22:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 10390,
+                  "nodeType": "ExpressionStatement",
+                  "src": "412:24:33"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10392,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emergencyShutdown",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10386,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "390:2:33"
+            },
+            "returnParameters": {
+              "id": 10387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:0:33"
+            },
+            "scope": 10393,
+            "src": "364:79:33",
+            "stateMutability": "nonpayable",
+            "superFunction": 198,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10394,
+        "src": "161:284:33"
+      }
+    ],
+    "src": "0:446:33"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/test/MockAdministratee.sol",
+    "exportedSymbols": {
+      "MockAdministratee": [
+        10393
+      ]
+    },
+    "id": 10394,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10371,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:33"
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/AdministrateeInterface.sol",
+        "file": "../AdministrateeInterface.sol",
+        "id": 10372,
+        "nodeType": "ImportDirective",
+        "scope": 10394,
+        "sourceUnit": 203,
+        "src": "25:39:33",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10373,
+              "name": "AdministrateeInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 202,
+              "src": "191:22:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AdministrateeInterface_$202",
+                "typeString": "contract AdministrateeInterface"
+              }
+            },
+            "id": 10374,
+            "nodeType": "InheritanceSpecifier",
+            "src": "191:22:33"
+          }
+        ],
+        "contractDependencies": [
+          202
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 10393,
+        "linearizedBaseContracts": [
+          10393,
+          202
+        ],
+        "name": "MockAdministratee",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 10376,
+            "name": "timesRemargined",
+            "nodeType": "VariableDeclaration",
+            "scope": 10393,
+            "src": "221:27:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 10375,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "221:4:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10378,
+            "name": "timesEmergencyShutdown",
+            "nodeType": "VariableDeclaration",
+            "scope": 10393,
+            "src": "254:34:33",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 10377,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "254:4:33",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10384,
+              "nodeType": "Block",
+              "src": "324:34:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10382,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "334:17:33",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 10381,
+                      "name": "timesRemargined",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10376,
+                      "src": "334:15:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 10383,
+                  "nodeType": "ExpressionStatement",
+                  "src": "334:17:33"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10385,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remargin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10379,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "312:2:33"
+            },
+            "returnParameters": {
+              "id": 10380,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "324:0:33"
+            },
+            "scope": 10393,
+            "src": "295:63:33",
+            "stateMutability": "nonpayable",
+            "superFunction": 201,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10391,
+              "nodeType": "Block",
+              "src": "402:41:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10389,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "412:24:33",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 10388,
+                      "name": "timesEmergencyShutdown",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10378,
+                      "src": "412:22:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 10390,
+                  "nodeType": "ExpressionStatement",
+                  "src": "412:24:33"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 10392,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emergencyShutdown",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10386,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "390:2:33"
+            },
+            "returnParameters": {
+              "id": 10387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:0:33"
+            },
+            "scope": 10393,
+            "src": "364:79:33",
+            "stateMutability": "nonpayable",
+            "superFunction": 198,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10394,
+        "src": "161:284:33"
+      }
+    ],
+    "src": "0:446:33"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-11-09T13:45:25.741Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

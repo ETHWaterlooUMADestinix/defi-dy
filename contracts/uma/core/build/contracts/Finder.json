@@ -1,0 +1,2995 @@
+{
+  "contractName": "Finder",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "name": "memberToRemove",
+          "type": "address"
+        }
+      ],
+      "name": "removeMember",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "name": "newMember",
+          "type": "address"
+        }
+      ],
+      "name": "addMember",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "name": "memberToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "holdsRole",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "roleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMember",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "interfacesImplemented",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "name": "newMember",
+          "type": "address"
+        }
+      ],
+      "name": "resetMember",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "interfaceName",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "newImplementationAddress",
+          "type": "address"
+        }
+      ],
+      "name": "InterfaceImplementationChanged",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "interfaceName",
+          "type": "bytes32"
+        },
+        {
+          "name": "implementationAddress",
+          "type": "address"
+        }
+      ],
+      "name": "changeImplementationAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "interfaceName",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getImplementationAddress",
+      "outputs": [
+        {
+          "name": "implementationAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"interfaceName\",\"type\":\"bytes32\"},{\"name\":\"implementationAddress\",\"type\":\"address\"}],\"name\":\"changeImplementationAddress\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"roleId\",\"type\":\"uint256\"},{\"name\":\"memberToRemove\",\"type\":\"address\"}],\"name\":\"removeMember\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"roleId\",\"type\":\"uint256\"},{\"name\":\"newMember\",\"type\":\"address\"}],\"name\":\"addMember\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"roleId\",\"type\":\"uint256\"},{\"name\":\"memberToCheck\",\"type\":\"address\"}],\"name\":\"holdsRole\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"interfaceName\",\"type\":\"bytes32\"}],\"name\":\"getImplementationAddress\",\"outputs\":[{\"name\":\"implementationAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"roleId\",\"type\":\"uint256\"}],\"name\":\"getMember\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"interfacesImplemented\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"roleId\",\"type\":\"uint256\"},{\"name\":\"newMember\",\"type\":\"address\"}],\"name\":\"resetMember\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"interfaceName\",\"type\":\"bytes32\"},{\"indexed\":true,\"name\":\"newImplementationAddress\",\"type\":\"address\"}],\"name\":\"InterfaceImplementationChanged\",\"type\":\"event\"}],\"devdoc\":{\"details\":\"Examples are the Oracle or Store interfaces.\",\"methods\":{\"addMember(uint256,address)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`.\"},\"changeImplementationAddress(bytes32,address)\":{\"details\":\"Updates the address of the contract that implements `interfaceName`.\"},\"getImplementationAddress(bytes32)\":{\"details\":\"Gets the address of the contract that implements the given `interfaceName`.\"},\"getMember(uint256)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, exclusive role.\"},\"holdsRole(uint256,address)\":{\"details\":\"Reverts if roleId does not correspond to an initialized role.\"},\"removeMember(uint256,address)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`.\"},\"resetMember(uint256,address)\":{\"details\":\"Reverts if the caller is not a member of the managing role for `roleId` or if `roleId` is not an initialized, exclusive role.\"}},\"title\":\"Provides addresses of the live contracts implementing certain interfaces. \"},\"userdoc\":{\"methods\":{\"addMember(uint256,address)\":{\"notice\":\"Adds `newMember` to the shared role, `roleId`.\"},\"getMember(uint256)\":{\"notice\":\"Gets the current holder of the exclusive role, `roleId`.\"},\"holdsRole(uint256,address)\":{\"notice\":\"Whether `memberToCheck` is a member of roleId.\"},\"removeMember(uint256,address)\":{\"notice\":\"Removes `memberToRemove` from the shared role, `roleId`.\"},\"resetMember(uint256,address)\":{\"notice\":\"Changes the exclusive role holder of `roleId` to `newMember`.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/Finder.sol\":\"Finder\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/Finder.sol\":{\"keccak256\":\"0xc57fc14cde59fc1cec6539d0c79ee213a639cfc7b1192306cca1a6a13b69511b\",\"urls\":[\"bzzr://7808173158dca991b149efd3dacc94607cb6b7bed35380cc46aa0bc35a811f36\"]},\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/MultiRole.sol\":{\"keccak256\":\"0xa66e77338b289f7f247819d6e19fec3d16c5c45cc149452183fbbb1d9883ecd0\",\"urls\":[\"bzzr://5e5941073fdf272354649abe9e72587f4e251d82c84dade8375e76299a068583\"]}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b506200003f600060018111156200002457fe5b600060018111156200003257fe5b336200007160201b60201c565b6200006b6001808111156200005057fe5b600060018111156200005e57fe5b336200007160201b60201c565b62000308565b82600060028111156200008057fe5b60008083815260200190815260200160002060010160009054906101000a900460ff166002811115620000af57fe5b1462000123576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601e8152602001807f43616e6e6f74207573652061207072652d6578697374696e6720726f6c65000081525060200191505060405180910390fd5b6000806000868152602001908152602001600020905060018160010160006101000a81548160ff021916908360028111156200015b57fe5b02179055508381600001819055506200018683826002016200022360201b62000d5f1790919060201c565b600060028111156200019457fe5b60008086815260200190815260200160002060010160009054906101000a900460ff166002811115620001c357fe5b14156200021c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252603c8152602001806200119a603c913960400191505060405180910390fd5b5050505050565b6200023582826200023960201b60201c565b5050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415620002c1576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526023815260200180620011d66023913960400191505060405180910390fd5b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b610e8280620003186000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063aafd5e401161005b578063aafd5e40146101dd578063ab3545e51461024b578063cc48f4db146102b9578063d97c05be1461032757610088565b806331f9665e1461008d5780636be7658b146100db57806374d0a676146101295780637cdc1cb914610177575b600080fd5b6100d9600480360360408110156100a357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610375565b005b610127600480360360408110156100f157600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061047b565b005b6101756004803603604081101561013f57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105ae565b005b6101c36004803603604081101561018d57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106e1565b604051808215151515815260200191505060405180910390f35b610209600480360360208110156101f357600080fd5b810190808035906020019092919050505061080f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102776004803603602081101561026157600080fd5b81019080803590602001909291905050506108d2565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102e5600480360360208110156102cf57600080fd5b810190808035906020019092919050505061098b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6103736004803603604081101561033d57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506109be565b005b60018081111561038157fe5b61038b81336106e1565b6103e0576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610dee6022913960400191505060405180910390fd5b816001600085815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff16837fb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe4860405160405180910390a3505050565b8160028081111561048857fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156104b657fe5b1461050c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610dc2602c913960400191505060405180910390fd5b8261052c60008083815260200190815260200160002060000154336106e1565b610581576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610e336024913960400191505060405180910390fd5b6105a883600080878152602001908152602001600020600301610af290919063ffffffff16565b50505050565b816002808111156105bb57fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156105e957fe5b1461063f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610dc2602c913960400191505060405180910390fd5b8261065f60008083815260200190815260200160002060000154336106e1565b6106b4576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610e336024913960400191505060405180910390fd5b6106db83600080878152602001908152602001600020600301610b5090919063ffffffff16565b50505050565b60008060008085815260200190815260200160002090506001600281111561070557fe5b8160010160009054906101000a900460ff16600281111561072257fe5b14156107465761073e8382600201610bae90919063ffffffff16565b915050610809565b60028081111561075257fe5b8160010160009054906101000a900460ff16600281111561076f57fe5b14156107935761078b8382600301610c0b90919063ffffffff16565b915050610809565b6000610807576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f496e76616c696420726f6c65496400000000000000000000000000000000000081525060200191505060405180910390fd5b505b92915050565b60006001600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156108cd576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526025815260200180610d9d6025913960400191505060405180910390fd5b919050565b600081600160028111156108e257fe5b60008083815260200190815260200160002060010160009054906101000a900460ff16600281111561091057fe5b14610966576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610d6e602f913960400191505060405180910390fd5b610983600080858152602001908152602001600020600201610c64565b915050919050565b60016020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b81600160028111156109cc57fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156109fa57fe5b14610a50576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610d6e602f913960400191505060405180910390fd5b82610a7060008083815260200190815260200160002060000154336106e1565b610ac5576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610e336024913960400191505060405180910390fd5b610aec83600080878152602001908152602001600020600201610c9290919063ffffffff16565b50505050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008173ffffffffffffffffffffffffffffffffffffffff168360000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614905092915050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b60008160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610d18576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526023815260200180610e106023913960400191505060405180910390fd5b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b610d698282610c92565b505056fe4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a6564204578636c757369766520726f6c654e6f20696d706c656d656e746174696f6e20666f7220696e7465726661636520666f756e644d7573742062652063616c6c6564206f6e20616e20696e697469616c697a65642053686172656420726f6c6553656e64657220646f6573206e6f7420686f6c6420726571756972656420726f6c6543616e6e6f742073657420616e206578636c757369766520726f6c6520746f2030783043616e206f6e6c792062652063616c6c6564206279206120726f6c65206d616e61676572a165627a7a72305820406c394e2361b45ccb6d8d13ad8a0c164bbf87f65589fd9ce99caee36b6fb6480029417474656d7074656420746f2075736520616e20696e76616c696420726f6c6520746f206d616e61676520616e206578636c757369766520726f6c6543616e6e6f742073657420616e206578636c757369766520726f6c6520746f20307830",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c8063aafd5e401161005b578063aafd5e40146101dd578063ab3545e51461024b578063cc48f4db146102b9578063d97c05be1461032757610088565b806331f9665e1461008d5780636be7658b146100db57806374d0a676146101295780637cdc1cb914610177575b600080fd5b6100d9600480360360408110156100a357600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610375565b005b610127600480360360408110156100f157600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061047b565b005b6101756004803603604081101561013f57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105ae565b005b6101c36004803603604081101561018d57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106e1565b604051808215151515815260200191505060405180910390f35b610209600480360360208110156101f357600080fd5b810190808035906020019092919050505061080f565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102776004803603602081101561026157600080fd5b81019080803590602001909291905050506108d2565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102e5600480360360208110156102cf57600080fd5b810190808035906020019092919050505061098b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6103736004803603604081101561033d57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506109be565b005b60018081111561038157fe5b61038b81336106e1565b6103e0576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610dee6022913960400191505060405180910390fd5b816001600085815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508173ffffffffffffffffffffffffffffffffffffffff16837fb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe4860405160405180910390a3505050565b8160028081111561048857fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156104b657fe5b1461050c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610dc2602c913960400191505060405180910390fd5b8261052c60008083815260200190815260200160002060000154336106e1565b610581576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610e336024913960400191505060405180910390fd5b6105a883600080878152602001908152602001600020600301610af290919063ffffffff16565b50505050565b816002808111156105bb57fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156105e957fe5b1461063f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602c815260200180610dc2602c913960400191505060405180910390fd5b8261065f60008083815260200190815260200160002060000154336106e1565b6106b4576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610e336024913960400191505060405180910390fd5b6106db83600080878152602001908152602001600020600301610b5090919063ffffffff16565b50505050565b60008060008085815260200190815260200160002090506001600281111561070557fe5b8160010160009054906101000a900460ff16600281111561072257fe5b14156107465761073e8382600201610bae90919063ffffffff16565b915050610809565b60028081111561075257fe5b8160010160009054906101000a900460ff16600281111561076f57fe5b14156107935761078b8382600301610c0b90919063ffffffff16565b915050610809565b6000610807576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600e8152602001807f496e76616c696420726f6c65496400000000000000000000000000000000000081525060200191505060405180910390fd5b505b92915050565b60006001600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156108cd576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526025815260200180610d9d6025913960400191505060405180910390fd5b919050565b600081600160028111156108e257fe5b60008083815260200190815260200160002060010160009054906101000a900460ff16600281111561091057fe5b14610966576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610d6e602f913960400191505060405180910390fd5b610983600080858152602001908152602001600020600201610c64565b915050919050565b60016020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b81600160028111156109cc57fe5b60008083815260200190815260200160002060010160009054906101000a900460ff1660028111156109fa57fe5b14610a50576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602f815260200180610d6e602f913960400191505060405180910390fd5b82610a7060008083815260200190815260200160002060000154336106e1565b610ac5576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526024815260200180610e336024913960400191505060405180910390fd5b610aec83600080878152602001908152602001600020600201610c9290919063ffffffff16565b50505050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008173ffffffffffffffffffffffffffffffffffffffff168360000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614905092915050565b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b60008160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415610d18576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526023815260200180610e106023913960400191505060405180910390fd5b808260000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b610d698282610c92565b505056fe4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a6564204578636c757369766520726f6c654e6f20696d706c656d656e746174696f6e20666f7220696e7465726661636520666f756e644d7573742062652063616c6c6564206f6e20616e20696e697469616c697a65642053686172656420726f6c6553656e64657220646f6573206e6f7420686f6c6420726571756972656420726f6c6543616e6e6f742073657420616e206578636c757369766520726f6c6520746f2030783043616e206f6e6c792062652063616c6c6564206279206120726f6c65206d616e61676572a165627a7a72305820406c394e2361b45ccb6d8d13ad8a0c164bbf87f65589fd9ce99caee36b6fb6480029",
+  "sourceMap": "199:1433:7:-;;;465:204;8:9:-1;5:2;;;30:1;27;20:12;5:2;465:204:7;496:80;522:16;517:22;;;;;;;;546:16;541:22;;;;;;;;565:10;496:20;;;:80;;:::i;:::-;586:76;612:12;607:18;;;;;;;;632:16;627:22;;;;;;;;651:10;586:20;;;:76;;:::i;:::-;199:1433;;6966:481:12;7094:6;5747:16;5721:42;;;;;;;;:5;:13;5727:6;5721:13;;;;;;;;;;;:22;;;;;;;;;;;;:42;;;;;;;;;5713:85;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7116:17;7136:5;:13;7142:6;7136:13;;;;;;;;;;;7116:33;;7175:18;7159:4;:13;;;:34;;;;;;;;;;;;;;;;;;;;;;;;7223:14;7203:4;:17;;:34;;;;7247:48;7281:13;7247:4;:28;;:33;;;;;;:48;;;;:::i;:::-;7347:16;7313:50;;;;;;;;:5;:21;7319:14;7313:21;;;;;;;;;;;:30;;;;;;;;;;;;:50;;;;;;;;;;7305:135;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5808:1;6966:481;;;;:::o;654:144::-;749:42;761:14;777:13;749:11;;;:42;;:::i;:::-;654:144;;:::o;286:221::-;413:3;392:25;;:9;:25;;;;384:73;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:9;467:14;:21;;;:33;;;;;;;;;;;;;;;;;;286:221;;:::o;199:1433:7:-;;;;;;;",
+  "deployedSourceMap": "199:1433:7:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;199:1433:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;772:315;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;772:315:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;5173:189:12;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;5173:189:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;4752:173;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4752:173:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3320:433;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3320:433:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1201:313:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1201:313:7;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;4357:157:12;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;4357:157:12;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;402:56:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;402:56:7;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;3997:183:12;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3997:183:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;772:315:7;908:12;903:18;;;;;;;;2251:29:12;2261:6;2269:10;2251:9;:29::i;:::-;2243:76;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;976:21:7;937;:36;959:13;937:36;;;;;;;;;;;;:60;;;;;;;;;;;;;;;;;;1058:21;1012:68;;1043:13;1012:68;;;;;;;;;;772:315;;;:::o;5173:189:12:-;5250:6;3080:15;3054:41;;;;;;;;:5;:13;3060:6;3054:13;;;;;;;;;;;:22;;;;;;;;;;;;:41;;;;;;;;;3046:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5274:6;2514:49;2524:5;:13;2530:6;2524:13;;;;;;;;;;;:26;;;2552:10;2514:9;:49::i;:::-;2506:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5292:63;5340:14;5292:5;:13;5298:6;5292:13;;;;;;;;;;;:34;;:47;;:63;;;;:::i;:::-;3154:1;5173:189;;;:::o;4752:173::-;4821:6;3080:15;3054:41;;;;;;;;:5;:13;3060:6;3054:13;;;;;;;;;;;:22;;;;;;;;;;;;:41;;;;;;;;;3046:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4845:6;2514:49;2524:5;:13;2530:6;2524:13;;;;;;;;;;;:26;;;2552:10;2514:9;:49::i;:::-;2506:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4863:55;4908:9;4863:5;:13;4869:6;4863:13;;;;;;;;;;;:34;;:44;;:55;;;;:::i;:::-;3154:1;4752:173;;;:::o;3320:433::-;3396:4;3412:17;3432:5;:13;3438:6;3432:13;;;;;;;;;;;3412:33;;3476:18;3459:35;;;;;;;;:4;:13;;;;;;;;;;;;:35;;;;;;;;;3455:250;;;3517:52;3555:13;3517:4;:28;;:37;;:52;;;;:::i;:::-;3510:59;;;;;3455:250;3607:15;3590:32;;;;;;;;:4;:13;;;;;;;;;;;;:32;;;;;;;;;3586:119;;;3645:49;3680:13;3645:4;:25;;:34;;:49;;;;:::i;:::-;3638:56;;;;;3586:119;3722:5;3714:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3320:433;;;;;;:::o;1201:313:7:-;1305:29;1374:21;:36;1396:13;1374:36;;;;;;;;;;;;;;;;;;;;;1350:60;;1461:3;1428:37;;:21;:37;;;;1420:87;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1201:313;;;:::o;4357:157:12:-;4432:7;4415:6;2810:18;2784:44;;;;;;;;:5;:13;2790:6;2784:13;;;;;;;;;;;:22;;;;;;;;;;;;:44;;;;;;;;;2776:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4458:49;:5;:13;4464:6;4458:13;;;;;;;;;;;:37;;:47;:49::i;:::-;4451:56;;4357:157;;;;:::o;402:56:7:-;;;;;;;;;;;;;;;;;;;;;;:::o;3997:183:12:-;4071:6;2810:18;2784:44;;;;;;;;:5;:13;2790:6;2784:13;;;;;;;;;;;:22;;;;;;;;;;;;:44;;;;;;;;;2776:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4095:6;2514:49;2524:5;:13;2530:6;2524:13;;;;;;;;;;;:26;;;2552:10;2514:9;:49::i;:::-;2506:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4113:60;4163:9;4113:5;:13;4119:6;4113:13;;;;;;;;;;;:37;;:49;;:60;;;;:::i;:::-;2890:1;3997:183;;;:::o;1230:157::-;1375:5;1334:14;:22;;:38;1357:14;1334:38;;;;;;;;;;;;;;;;:46;;;;;;;;;;;;;;;;;;1230:157;;:::o;1077:147::-;1213:4;1175:14;:22;;:35;1198:11;1175:35;;;;;;;;;;;;;;;;:42;;;;;;;;;;;;;;;;;;1077:147;;:::o;109:171::-;212:4;260:13;235:38;;:14;:21;;;;;;;;;;;;:38;;;228:45;;109:171;;;;:::o;901:170::-;1004:4;1027:14;:22;;:37;1050:13;1027:37;;;;;;;;;;;;;;;;;;;;;;;;;1020:44;;901:170;;;;:::o;513:135::-;594:7;620:14;:21;;;;;;;;;;;;613:28;;513:135;;;:::o;286:221::-;413:3;392:25;;:9;:25;;;;384:73;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:9;467:14;:21;;;:33;;;;;;;;;;;;;;;;;;286:221;;:::o;654:144::-;749:42;761:14;777:13;749:11;:42::i;:::-;654:144;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./MultiRole.sol\";\n\n\n/**\n * @title Provides addresses of the live contracts implementing certain interfaces. \n * @dev Examples are the Oracle or Store interfaces.\n */\ncontract Finder is MultiRole {\n\n    enum Roles {\n        // Can set the writer.\n        Governance,\n        // Can update/write the addresses which implement a given interface.\n        Writer\n    }\n\n    mapping(bytes32 => address) public interfacesImplemented;\n\n    constructor() public {\n        _createExclusiveRole(uint(Roles.Governance), uint(Roles.Governance), msg.sender);\n        _createExclusiveRole(uint(Roles.Writer), uint(Roles.Governance), msg.sender);\n    }\n\n    /**\n     * @dev Updates the address of the contract that implements `interfaceName`.\n     */\n    function changeImplementationAddress(bytes32 interfaceName, address implementationAddress)\n        external\n        onlyRoleHolder(uint(Roles.Writer))\n    {\n        interfacesImplemented[interfaceName] = implementationAddress;\n        emit InterfaceImplementationChanged(interfaceName, implementationAddress);\n    }\n    \n    /**\n     * @dev Gets the address of the contract that implements the given `interfaceName`.\n     */\n    function getImplementationAddress(bytes32 interfaceName)\n        external\n        view\n        returns (address implementationAddress)\n    {\n        implementationAddress = interfacesImplemented[interfaceName];\n        require(implementationAddress != address(0x0), \"No implementation for interface found\");\n    }\n\n    event InterfaceImplementationChanged(bytes32 indexed interfaceName, address indexed newImplementationAddress);\n}\n",
+  "sourcePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/Finder.sol",
+  "ast": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/Finder.sol",
+    "exportedSymbols": {
+      "Finder": [
+        834
+      ]
+    },
+    "id": 835,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 739,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/MultiRole.sol",
+        "file": "./MultiRole.sol",
+        "id": 740,
+        "nodeType": "ImportDirective",
+        "scope": 835,
+        "sourceUnit": 2074,
+        "src": "25:25:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 741,
+              "name": "MultiRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2073,
+              "src": "218:9:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MultiRole_$2073",
+                "typeString": "contract MultiRole"
+              }
+            },
+            "id": 742,
+            "nodeType": "InheritanceSpecifier",
+            "src": "218:9:7"
+          }
+        ],
+        "contractDependencies": [
+          2073
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Provides addresses of the live contracts implementing certain interfaces. \n@dev Examples are the Oracle or Store interfaces.",
+        "fullyImplemented": true,
+        "id": 834,
+        "linearizedBaseContracts": [
+          834,
+          2073
+        ],
+        "name": "Finder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Finder.Roles",
+            "id": 745,
+            "members": [
+              {
+                "id": 743,
+                "name": "Governance",
+                "nodeType": "EnumValue",
+                "src": "287:10:7"
+              },
+              {
+                "id": 744,
+                "name": "Writer",
+                "nodeType": "EnumValue",
+                "src": "384:6:7"
+              }
+            ],
+            "name": "Roles",
+            "nodeType": "EnumDefinition",
+            "src": "235:161:7"
+          },
+          {
+            "constant": false,
+            "id": 749,
+            "name": "interfacesImplemented",
+            "nodeType": "VariableDeclaration",
+            "scope": 834,
+            "src": "402:56:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+              "typeString": "mapping(bytes32 => address)"
+            },
+            "typeName": {
+              "id": 748,
+              "keyType": {
+                "id": 746,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "410:7:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "402:27:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                "typeString": "mapping(bytes32 => address)"
+              },
+              "valueType": {
+                "id": 747,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "421:7:7",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 778,
+              "nodeType": "Block",
+              "src": "486:183:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 754,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "522:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 755,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "522:16:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 753,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "517:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 756,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "517:22:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 758,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "546:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 759,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "546:16:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 757,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "541:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 760,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "541:22:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 761,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12443,
+                          "src": "565:3:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 762,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "565:10:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 752,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2072,
+                      "src": "496:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 763,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "496:80:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 764,
+                  "nodeType": "ExpressionStatement",
+                  "src": "496:80:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 767,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "612:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 768,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Writer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "612:12:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 766,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "607:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 769,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "607:18:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 771,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "632:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 772,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "632:16:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 770,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "627:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 773,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "627:22:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 774,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12443,
+                          "src": "651:3:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 775,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "651:10:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 765,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2072,
+                      "src": "586:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 776,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "586:76:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 777,
+                  "nodeType": "ExpressionStatement",
+                  "src": "586:76:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 779,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 750,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "476:2:7"
+            },
+            "returnParameters": {
+              "id": 751,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "486:0:7"
+            },
+            "scope": 834,
+            "src": "465:204:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 803,
+              "nodeType": "Block",
+              "src": "927:160:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 796,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 792,
+                        "name": "interfacesImplemented",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 749,
+                        "src": "937:21:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                          "typeString": "mapping(bytes32 => address)"
+                        }
+                      },
+                      "id": 794,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 793,
+                        "name": "interfaceName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 781,
+                        "src": "959:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "937:36:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 795,
+                      "name": "implementationAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 783,
+                      "src": "976:21:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "937:60:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 797,
+                  "nodeType": "ExpressionStatement",
+                  "src": "937:60:7"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 799,
+                        "name": "interfaceName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 781,
+                        "src": "1043:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 800,
+                        "name": "implementationAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 783,
+                        "src": "1058:21:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 798,
+                      "name": "InterfaceImplementationChanged",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 833,
+                      "src": "1012:30:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$_t_address_$returns$__$",
+                        "typeString": "function (bytes32,address)"
+                      }
+                    },
+                    "id": 801,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1012:68:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 802,
+                  "nodeType": "EmitStatement",
+                  "src": "1007:73:7"
+                }
+              ]
+            },
+            "documentation": "@dev Updates the address of the contract that implements `interfaceName`.",
+            "id": 804,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 787,
+                          "name": "Roles",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 745,
+                          "src": "908:5:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                            "typeString": "type(enum Finder.Roles)"
+                          }
+                        },
+                        "id": 788,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "Writer",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "908:12:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Roles_$745",
+                          "typeString": "enum Finder.Roles"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Roles_$745",
+                          "typeString": "enum Finder.Roles"
+                        }
+                      ],
+                      "id": 786,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "903:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint"
+                    },
+                    "id": 789,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "903:18:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 790,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 785,
+                  "name": "onlyRoleHolder",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1752,
+                  "src": "888:14:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "888:34:7"
+              }
+            ],
+            "name": "changeImplementationAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 784,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 781,
+                  "name": "interfaceName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 804,
+                  "src": "809:21:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 780,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 783,
+                  "name": "implementationAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 804,
+                  "src": "832:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 782,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "808:54:7"
+            },
+            "returnParameters": {
+              "id": 791,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "927:0:7"
+            },
+            "scope": 834,
+            "src": "772:315:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 826,
+              "nodeType": "Block",
+              "src": "1340:174:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 815,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 811,
+                      "name": "implementationAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 809,
+                      "src": "1350:21:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 812,
+                        "name": "interfacesImplemented",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 749,
+                        "src": "1374:21:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                          "typeString": "mapping(bytes32 => address)"
+                        }
+                      },
+                      "id": 814,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 813,
+                        "name": "interfaceName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 806,
+                        "src": "1396:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1374:36:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1350:60:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 816,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1350:60:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 822,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 818,
+                          "name": "implementationAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 809,
+                          "src": "1428:21:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "307830",
+                              "id": 820,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1461:3:7",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0x0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 819,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1453:7:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 821,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1453:12:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1428:37:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f20696d706c656d656e746174696f6e20666f7220696e7465726661636520666f756e64",
+                        "id": 823,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1467:39:7",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_61794766cb3c5be3866cfc2b6990afc53ffb8d64b9df78006a81c8c06e2c4b8b",
+                          "typeString": "literal_string \"No implementation for interface found\""
+                        },
+                        "value": "No implementation for interface found"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_61794766cb3c5be3866cfc2b6990afc53ffb8d64b9df78006a81c8c06e2c4b8b",
+                          "typeString": "literal_string \"No implementation for interface found\""
+                        }
+                      ],
+                      "id": 817,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12446,
+                        12447
+                      ],
+                      "referencedDeclaration": 12447,
+                      "src": "1420:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 824,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1420:87:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 825,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1420:87:7"
+                }
+              ]
+            },
+            "documentation": "@dev Gets the address of the contract that implements the given `interfaceName`.",
+            "id": 827,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getImplementationAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 807,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 806,
+                  "name": "interfaceName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 827,
+                  "src": "1235:21:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 805,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1235:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1234:23:7"
+            },
+            "returnParameters": {
+              "id": 810,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 809,
+                  "name": "implementationAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 827,
+                  "src": "1305:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 808,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1305:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1304:31:7"
+            },
+            "scope": 834,
+            "src": "1201:313:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 833,
+            "name": "InterfaceImplementationChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 832,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 829,
+                  "indexed": true,
+                  "name": "interfaceName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 833,
+                  "src": "1557:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 828,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1557:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 831,
+                  "indexed": true,
+                  "name": "newImplementationAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 833,
+                  "src": "1588:40:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 830,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1588:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1556:73:7"
+            },
+            "src": "1520:110:7"
+          }
+        ],
+        "scope": 835,
+        "src": "199:1433:7"
+      }
+    ],
+    "src": "0:1633:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/Finder.sol",
+    "exportedSymbols": {
+      "Finder": [
+        834
+      ]
+    },
+    "id": 835,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 739,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/MultiRole.sol",
+        "file": "./MultiRole.sol",
+        "id": 740,
+        "nodeType": "ImportDirective",
+        "scope": 835,
+        "sourceUnit": 2074,
+        "src": "25:25:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 741,
+              "name": "MultiRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2073,
+              "src": "218:9:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MultiRole_$2073",
+                "typeString": "contract MultiRole"
+              }
+            },
+            "id": 742,
+            "nodeType": "InheritanceSpecifier",
+            "src": "218:9:7"
+          }
+        ],
+        "contractDependencies": [
+          2073
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Provides addresses of the live contracts implementing certain interfaces. \n@dev Examples are the Oracle or Store interfaces.",
+        "fullyImplemented": true,
+        "id": 834,
+        "linearizedBaseContracts": [
+          834,
+          2073
+        ],
+        "name": "Finder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Finder.Roles",
+            "id": 745,
+            "members": [
+              {
+                "id": 743,
+                "name": "Governance",
+                "nodeType": "EnumValue",
+                "src": "287:10:7"
+              },
+              {
+                "id": 744,
+                "name": "Writer",
+                "nodeType": "EnumValue",
+                "src": "384:6:7"
+              }
+            ],
+            "name": "Roles",
+            "nodeType": "EnumDefinition",
+            "src": "235:161:7"
+          },
+          {
+            "constant": false,
+            "id": 749,
+            "name": "interfacesImplemented",
+            "nodeType": "VariableDeclaration",
+            "scope": 834,
+            "src": "402:56:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+              "typeString": "mapping(bytes32 => address)"
+            },
+            "typeName": {
+              "id": 748,
+              "keyType": {
+                "id": 746,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "410:7:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "402:27:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                "typeString": "mapping(bytes32 => address)"
+              },
+              "valueType": {
+                "id": 747,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "421:7:7",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 778,
+              "nodeType": "Block",
+              "src": "486:183:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 754,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "522:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 755,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "522:16:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 753,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "517:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 756,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "517:22:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 758,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "546:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 759,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "546:16:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 757,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "541:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 760,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "541:22:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 761,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12443,
+                          "src": "565:3:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 762,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "565:10:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 752,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2072,
+                      "src": "496:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 763,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "496:80:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 764,
+                  "nodeType": "ExpressionStatement",
+                  "src": "496:80:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 767,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "612:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 768,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Writer",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "612:12:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 766,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "607:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 769,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "607:18:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 771,
+                              "name": "Roles",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 745,
+                              "src": "632:5:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                                "typeString": "type(enum Finder.Roles)"
+                              }
+                            },
+                            "id": 772,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "Governance",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "632:16:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Roles_$745",
+                              "typeString": "enum Finder.Roles"
+                            }
+                          ],
+                          "id": 770,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "627:4:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 773,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "627:22:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 774,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12443,
+                          "src": "651:3:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 775,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "651:10:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 765,
+                      "name": "_createExclusiveRole",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2072,
+                      "src": "586:20:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_address_$returns$__$",
+                        "typeString": "function (uint256,uint256,address)"
+                      }
+                    },
+                    "id": 776,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "586:76:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 777,
+                  "nodeType": "ExpressionStatement",
+                  "src": "586:76:7"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 779,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 750,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "476:2:7"
+            },
+            "returnParameters": {
+              "id": 751,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "486:0:7"
+            },
+            "scope": 834,
+            "src": "465:204:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 803,
+              "nodeType": "Block",
+              "src": "927:160:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 796,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 792,
+                        "name": "interfacesImplemented",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 749,
+                        "src": "937:21:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                          "typeString": "mapping(bytes32 => address)"
+                        }
+                      },
+                      "id": 794,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 793,
+                        "name": "interfaceName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 781,
+                        "src": "959:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "937:36:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 795,
+                      "name": "implementationAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 783,
+                      "src": "976:21:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "937:60:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 797,
+                  "nodeType": "ExpressionStatement",
+                  "src": "937:60:7"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 799,
+                        "name": "interfaceName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 781,
+                        "src": "1043:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 800,
+                        "name": "implementationAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 783,
+                        "src": "1058:21:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 798,
+                      "name": "InterfaceImplementationChanged",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 833,
+                      "src": "1012:30:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$_t_address_$returns$__$",
+                        "typeString": "function (bytes32,address)"
+                      }
+                    },
+                    "id": 801,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1012:68:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 802,
+                  "nodeType": "EmitStatement",
+                  "src": "1007:73:7"
+                }
+              ]
+            },
+            "documentation": "@dev Updates the address of the contract that implements `interfaceName`.",
+            "id": 804,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 787,
+                          "name": "Roles",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 745,
+                          "src": "908:5:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Roles_$745_$",
+                            "typeString": "type(enum Finder.Roles)"
+                          }
+                        },
+                        "id": 788,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "Writer",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "908:12:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Roles_$745",
+                          "typeString": "enum Finder.Roles"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_Roles_$745",
+                          "typeString": "enum Finder.Roles"
+                        }
+                      ],
+                      "id": 786,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "903:4:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint"
+                    },
+                    "id": 789,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "903:18:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 790,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 785,
+                  "name": "onlyRoleHolder",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1752,
+                  "src": "888:14:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "888:34:7"
+              }
+            ],
+            "name": "changeImplementationAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 784,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 781,
+                  "name": "interfaceName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 804,
+                  "src": "809:21:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 780,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 783,
+                  "name": "implementationAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 804,
+                  "src": "832:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 782,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "808:54:7"
+            },
+            "returnParameters": {
+              "id": 791,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "927:0:7"
+            },
+            "scope": 834,
+            "src": "772:315:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 826,
+              "nodeType": "Block",
+              "src": "1340:174:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 815,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 811,
+                      "name": "implementationAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 809,
+                      "src": "1350:21:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 812,
+                        "name": "interfacesImplemented",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 749,
+                        "src": "1374:21:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                          "typeString": "mapping(bytes32 => address)"
+                        }
+                      },
+                      "id": 814,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 813,
+                        "name": "interfaceName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 806,
+                        "src": "1396:13:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1374:36:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1350:60:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 816,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1350:60:7"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 822,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 818,
+                          "name": "implementationAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 809,
+                          "src": "1428:21:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "307830",
+                              "id": 820,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1461:3:7",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0x0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 819,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1453:7:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 821,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1453:12:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1428:37:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f20696d706c656d656e746174696f6e20666f7220696e7465726661636520666f756e64",
+                        "id": 823,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1467:39:7",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_61794766cb3c5be3866cfc2b6990afc53ffb8d64b9df78006a81c8c06e2c4b8b",
+                          "typeString": "literal_string \"No implementation for interface found\""
+                        },
+                        "value": "No implementation for interface found"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_61794766cb3c5be3866cfc2b6990afc53ffb8d64b9df78006a81c8c06e2c4b8b",
+                          "typeString": "literal_string \"No implementation for interface found\""
+                        }
+                      ],
+                      "id": 817,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12446,
+                        12447
+                      ],
+                      "referencedDeclaration": 12447,
+                      "src": "1420:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 824,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1420:87:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 825,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1420:87:7"
+                }
+              ]
+            },
+            "documentation": "@dev Gets the address of the contract that implements the given `interfaceName`.",
+            "id": 827,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getImplementationAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 807,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 806,
+                  "name": "interfaceName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 827,
+                  "src": "1235:21:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 805,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1235:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1234:23:7"
+            },
+            "returnParameters": {
+              "id": 810,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 809,
+                  "name": "implementationAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 827,
+                  "src": "1305:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 808,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1305:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1304:31:7"
+            },
+            "scope": 834,
+            "src": "1201:313:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 833,
+            "name": "InterfaceImplementationChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 832,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 829,
+                  "indexed": true,
+                  "name": "interfaceName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 833,
+                  "src": "1557:29:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 828,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1557:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 831,
+                  "indexed": true,
+                  "name": "newImplementationAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 833,
+                  "src": "1588:40:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 830,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1588:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1556:73:7"
+            },
+            "src": "1520:110:7"
+          }
+        ],
+        "scope": 835,
+        "src": "199:1433:7"
+      }
+    ],
+    "src": "0:1633:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "3": {
+      "events": {
+        "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "interfaceName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "newImplementationAddress",
+              "type": "address"
+            }
+          ],
+          "name": "InterfaceImplementationChanged",
+          "type": "event",
+          "signature": "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48"
+        }
+      },
+      "links": {},
+      "address": "0xb7d5837f067A371703d54eFC7523bE88380c45f2",
+      "transactionHash": "0x45a096607e055f7437b691b32b9a43c5bf4c70f8f384b41878949b3222c3d164"
+    },
+    "4": {
+      "events": {
+        "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "interfaceName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "newImplementationAddress",
+              "type": "address"
+            }
+          ],
+          "name": "InterfaceImplementationChanged",
+          "type": "event",
+          "signature": "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48"
+        }
+      },
+      "links": {},
+      "address": "0x41E9752A97Bd1110Eea2970bD26228C3bF7f3ac8",
+      "transactionHash": "0x16929bb002af771cd3370d9bc054849d55b02283a3c4b840a936947a91ae1e06"
+    },
+    "11": {
+      "events": {
+        "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "interfaceName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "newImplementationAddress",
+              "type": "address"
+            }
+          ],
+          "name": "InterfaceImplementationChanged",
+          "type": "event",
+          "signature": "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48"
+        }
+      },
+      "links": {},
+      "address": "0x41E9752A97Bd1110Eea2970bD26228C3bF7f3ac8",
+      "transactionHash": "0x16929bb002af771cd3370d9bc054849d55b02283a3c4b840a936947a91ae1e06"
+    },
+    "1573307093595": {
+      "events": {
+        "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "interfaceName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "newImplementationAddress",
+              "type": "address"
+            }
+          ],
+          "name": "InterfaceImplementationChanged",
+          "type": "event",
+          "signature": "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48"
+        }
+      },
+      "links": {},
+      "address": "0x8Fb48Dac501563806926b345De944b0Bed70f1AA",
+      "transactionHash": "0xdd06f004a71c7fe280a8e842f10dc3c205a74a6fb7878f7614e380dc810a0a64"
+    },
+    "1573307191631": {
+      "events": {
+        "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "interfaceName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "newImplementationAddress",
+              "type": "address"
+            }
+          ],
+          "name": "InterfaceImplementationChanged",
+          "type": "event",
+          "signature": "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48"
+        }
+      },
+      "links": {},
+      "address": "0x41E9752A97Bd1110Eea2970bD26228C3bF7f3ac8",
+      "transactionHash": "0x16929bb002af771cd3370d9bc054849d55b02283a3c4b840a936947a91ae1e06"
+    },
+    "1573321682049": {
+      "events": {
+        "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "interfaceName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "newImplementationAddress",
+              "type": "address"
+            }
+          ],
+          "name": "InterfaceImplementationChanged",
+          "type": "event",
+          "signature": "0xb29aa13e555039289e0513962835b00fcc6e4a265ae8f99e68e5b90d5406fe48"
+        }
+      },
+      "links": {},
+      "address": "0x480cfE502bEaDaDeE666E5109975bF5Ea72000D5",
+      "transactionHash": "0x59636603a66ab854b753a3c0e97e6ee7ca956e12cc9eb4a87c87a150387546a4"
+    }
+  },
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-11-09T21:40:57.580Z",
+  "devdoc": {
+    "details": "Examples are the Oracle or Store interfaces.",
+    "methods": {
+      "addMember(uint256,address)": {
+        "details": "Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`."
+      },
+      "changeImplementationAddress(bytes32,address)": {
+        "details": "Updates the address of the contract that implements `interfaceName`."
+      },
+      "getImplementationAddress(bytes32)": {
+        "details": "Gets the address of the contract that implements the given `interfaceName`."
+      },
+      "getMember(uint256)": {
+        "details": "Reverts if `roleId` does not represent an initialized, exclusive role."
+      },
+      "holdsRole(uint256,address)": {
+        "details": "Reverts if roleId does not correspond to an initialized role."
+      },
+      "removeMember(uint256,address)": {
+        "details": "Reverts if `roleId` does not represent an initialized, shared role or if the caller is not a member of the managing role for `roleId`."
+      },
+      "resetMember(uint256,address)": {
+        "details": "Reverts if the caller is not a member of the managing role for `roleId` or if `roleId` is not an initialized, exclusive role."
+      }
+    },
+    "title": "Provides addresses of the live contracts implementing certain interfaces. "
+  },
+  "userdoc": {
+    "methods": {
+      "addMember(uint256,address)": {
+        "notice": "Adds `newMember` to the shared role, `roleId`."
+      },
+      "getMember(uint256)": {
+        "notice": "Gets the current holder of the exclusive role, `roleId`."
+      },
+      "holdsRole(uint256,address)": {
+        "notice": "Whether `memberToCheck` is a member of roleId."
+      },
+      "removeMember(uint256,address)": {
+        "notice": "Removes `memberToRemove` from the shared role, `roleId`."
+      },
+      "resetMember(uint256,address)": {
+        "notice": "Changes the exclusive role holder of `roleId` to `newMember`."
+      }
+    }
+  }
+}

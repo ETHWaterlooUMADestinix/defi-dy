@@ -6,26 +6,8 @@ import "./PriceFeedInterface.sol";
 import "./Testable.sol";
 import "./Withdrawable.sol";
 
-interface CTokenInterface {
-    function redeem(uint redeemTokens) external returns (uint);
-    function redeemUnderlying(uint redeemAmount) external returns (uint);
-    function borrow(uint borrowAmount) external returns (uint);
-    function liquidateBorrow(address borrower, uint repayAmount, address cTokenCollateral) external returns (uint);
-    function liquidateBorrow(address borrower, address cTokenCollateral) external payable;
-    function exchangeRateCurrent() external returns (uint);
-    function getCash() external view returns (uint);
-    function totalBorrowsCurrent() external returns (uint);
-    function borrowRatePerBlock() external view returns (uint);
-    function supplyRatePerBlock() external view returns (uint);
-    function totalReserves() external view returns (uint);
-    function reserveFactorMantissa() external view returns (uint);
-
-    function totalSupply() external view returns (uint256);
-    function balanceOf(address owner) external view returns (uint256 balance);
-    function allowance(address, address) external view returns (uint);
-    function approve(address, uint) external;
-    function transfer(address, uint) external returns (bool);
-    function transferFrom(address, address, uint) external returns (bool);
+interface DefiDyMaths {
+  function exchangeVal() external view returns (int);
 }
 
 /**
@@ -71,8 +53,8 @@ contract ManualPriceFeed is PriceFeedInterface, Withdrawable, Testable {
         require(_isIdentifierSupported(identifier));
         // CDai borrowRatePerBlock
         publishTime = getCurrentTime(); // prices[identifier].timestamp;
-        CTokenInterface cToken = CTokenInterface(0x6D7F0754FFeb405d23C51CE938289d4835bE3b14);
-        price = int(cToken.borrowRatePerBlock() * 10**7);
+        DefiDyMaths defidy = DefiDyMaths(0x8eC03A8990b9aA278c8fC3b5bBF765C4bd1B84a9);
+        price = defidy.exchangeVal();
     }
 
     function _isIdentifierSupported(bytes32 identifier) private view returns (bool isSupported) {

@@ -1,0 +1,3114 @@
+{
+  "contractName": "TokenMigrator",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "rate",
+      "outputs": [
+        {
+          "name": "rawValue",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "snapshotId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "oldToken",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "newToken",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "hasMigrated",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "name": "rawValue",
+              "type": "uint256"
+            }
+          ],
+          "name": "_rate",
+          "type": "tuple"
+        },
+        {
+          "name": "_oldToken",
+          "type": "address"
+        },
+        {
+          "name": "_newToken",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tokenHolder",
+          "type": "address"
+        }
+      ],
+      "name": "migrateTokens",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"rate\",\"outputs\":[{\"name\":\"rawValue\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"snapshotId\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"oldToken\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"tokenHolder\",\"type\":\"address\"}],\"name\":\"migrateTokens\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"newToken\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"hasMigrated\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"name\":\"rawValue\",\"type\":\"uint256\"}],\"name\":\"_rate\",\"type\":\"tuple\"},{\"name\":\"_oldToken\",\"type\":\"address\"},{\"name\":\"_newToken\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"details\":\"Handles migrating token holders from one token to the next.\",\"methods\":{\"constructor\":{\"details\":\"This function triggers the snapshot upon which all migrations will be based.\",\"params\":{\"_newToken\":\"the address of the token being migrated to.\",\"_oldToken\":\"the address of the token being migrated from.\",\"_rate\":\"the number of old tokens it takes to generate one new token.\"}},\"migrateTokens(address)\":{\"details\":\"This function can only be called once per `tokenHolder`. Anyone can call this method on behalf of any other token holder since there is no disadvantage to receiving the tokens earlier.\"}},\"title\":\"Migration contract for VotingTokens.\"},\"userdoc\":{\"methods\":{\"constructor\":\"Construct the TokenMigrator contract.\",\"migrateTokens(address)\":{\"notice\":\"Migrates the tokenHolder's old tokens to new tokens.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/TokenMigrator.sol\":\"TokenMigrator\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/ExpandedIERC20.sol\":{\"keccak256\":\"0x395e568d08c543a703dcdf347e707d07702ca21c6a0a8bb367f510420201a584\",\"urls\":[\"bzzr://ae10dfb59296cea84ffda1ca9dd3c5b349cd2f47a33a77738b37337187eca32f\"]},\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/FixedPoint.sol\":{\"keccak256\":\"0xead44602606867dfec7672787476c2d3a6424cf1808dd7cc9752578a06da7ff8\",\"urls\":[\"bzzr://51b135337aa5c361f9601c6bec5700f0a1a72cb6528ec7b6bedcfcd2366f11a7\"]},\"/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/TokenMigrator.sol\":{\"keccak256\":\"0x32587f1779984b47b945bdb5e4610feceaf2e94c4aeed7e8ae34c870c387870c\",\"urls\":[\"bzzr://c25f1bd0233b6edc61198f73a91b5732971df00e7059b0a178bfb5e20412c734\"]},\"openzeppelin-solidity/contracts/drafts/Counters.sol\":{\"keccak256\":\"0x5eb69360d3441ab2ee799bd7c007cccbffb0896f12b2dfe1456193e2aa180a11\",\"urls\":[\"bzzr://ecd0352164978c418c8f5b0080c972b65e4b07f6afc593fb7cdd856185a458ea\"]},\"openzeppelin-solidity/contracts/drafts/ERC20Snapshot.sol\":{\"keccak256\":\"0x1bcae479d86294b0eb4c2659a34ff1ada60402b2d8876fb151d52e198385d295\",\"urls\":[\"bzzr://34f48aa1f0bb513855079fe1247b5b8d16697b919def0fc21e5daccd37f98ad9\"]},\"openzeppelin-solidity/contracts/math/Math.sol\":{\"keccak256\":\"0x4b5aa451e4e8801478708f94b118a7821c0500d676255eaf89fc78c14856ce4e\",\"urls\":[\"bzzr://200d5728b32858918810d8d7a8db1406ee9b157ad5026f050e6d864a696b9080\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzzr://1604f5b6d6e916c154efd8c6720cda069e5ba32dfa0a9dedf2b42e5b02d07f89\"]},\"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x852793a3c2f86d336a683b30d688ec3dcfc57451af5a2bf5975cda3b7191a901\",\"urls\":[\"bzzr://07fb42206812a17c1f71e548cfa5cec6f9aa1ae0ca5df870718ca4aa9759d1a5\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzzr://aa8b45b57edafc3d67bc5d916327ea16807fae33f753ca163ae0c4061b789766\"]},\"openzeppelin-solidity/contracts/utils/Arrays.sol\":{\"keccak256\":\"0xf133e2b961064508c97532188b29428be84c7de6d77f8caf77ca82644b9a02b9\",\"urls\":[\"bzzr://73037a4851a8b9aceafa44dd06d6da4832d48d3bdf19e6817e0f4707ed5430f3\"]}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b5060405160608062000d988339810180604052620000339190810190620001e3565b8260036000820151816000015590505080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16639711715a6040518163ffffffff1660e01b8152600401602060405180830381600087803b1580156200012e57600080fd5b505af115801562000143573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525062000169919081019062000239565b60028190555050505062000305565b6000815190506200018981620002d1565b92915050565b600060208284031215620001a257600080fd5b620001ae602062000265565b90506000620001c084828501620001cc565b60008301525092915050565b600081519050620001dd81620002eb565b92915050565b600080600060608486031215620001f957600080fd5b600062000209868287016200018f565b93505060206200021c8682870162000178565b92505060406200022f8682870162000178565b9150509250925092565b6000602082840312156200024c57600080fd5b60006200025c84828501620001cc565b91505092915050565b6000604051905081810181811067ffffffffffffffff821117156200028957600080fd5b8060405250919050565b6000620002a082620002a7565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b620002dc8162000293565b8114620002e857600080fd5b50565b620002f681620002c7565b81146200030257600080fd5b50565b610a8380620003156000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80632c4e722e146100675780632ddc79b714610085578063b31c710a146100a3578063c1684711146100c1578063c42bd05a146100dd578063d7625c88146100fb575b600080fd5b61006f61012b565b60405161007c9190610948565b60405180910390f35b61008d610137565b60405161009a9190610948565b60405180910390f35b6100ab61013d565b6040516100b89190610892565b60405180910390f35b6100db60048036036100d69190810190610662565b610162565b005b6100e5610456565b6040516100f291906108ad565b60405180910390f35b61011560048036036101109190810190610662565b61047c565b6040516101229190610877565b60405180910390f35b60038060000154905081565b60025481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600460008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16156101ef576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016101e690610928565b60405180910390fd5b6001600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555061024f610610565b60405180602001604052806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16634ee2cd7e856002546040518363ffffffff1660e01b81526004016102b892919061084e565b60206040518083038186803b1580156102d057600080fd5b505afa1580156102e4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525061030891908101906106b4565b815250905061032160008261049c90919063ffffffff16565b61032b5750610453565b610333610610565b61035c6003604051806020016040529081600082015481525050836104b990919063ffffffff16565b9050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166340c10f198483600001516040518363ffffffff1660e01b81526004016103bf92919061084e565b602060405180830381600087803b1580156103d957600080fd5b505af11580156103ed573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250610411919081019061068b565b610450576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610447906108c8565b60405180910390fd5b50505b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60046020528060005260406000206000915054906101000a900460ff1681565b60006104a78261050c565b60000151836000015111905092915050565b6104c1610610565b604051806020016040528061050184600001516104f3670de0b6b3a7640000886000015161054490919063ffffffff16565b6105b490919063ffffffff16565b815250905092915050565b610514610610565b604051806020016040528061053a670de0b6b3a76400008561054490919063ffffffff16565b8152509050919050565b60008083141561055757600090506105ae565b600082840290508284828161056857fe5b04146105a9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016105a090610908565b60405180910390fd5b809150505b92915050565b60008082116105f8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016105ef906108e8565b60405180910390fd5b600082848161060357fe5b0490508091505092915050565b6040518060200160405280600081525090565b60008135905061063281610a04565b92915050565b60008151905061064781610a1b565b92915050565b60008151905061065c81610a32565b92915050565b60006020828403121561067457600080fd5b600061068284828501610623565b91505092915050565b60006020828403121561069d57600080fd5b60006106ab84828501610638565b91505092915050565b6000602082840312156106c657600080fd5b60006106d48482850161064d565b91505092915050565b6106e681610974565b82525050565b6106f581610986565b82525050565b610704816109bc565b82525050565b610713816109e0565b82525050565b6000610726600b83610963565b91507f4d696e74206661696c65640000000000000000000000000000000000000000006000830152602082019050919050565b6000610766601a83610963565b91507f536166654d6174683a206469766973696f6e206279207a65726f0000000000006000830152602082019050919050565b60006107a6602183610963565b91507f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f60008301527f77000000000000000000000000000000000000000000000000000000000000006020830152604082019050919050565b600061080c601783610963565b91507f416c7265616479206d6967726174656420746f6b656e730000000000000000006000830152602082019050919050565b610848816109b2565b82525050565b600060408201905061086360008301856106dd565b610870602083018461083f565b9392505050565b600060208201905061088c60008301846106ec565b92915050565b60006020820190506108a760008301846106fb565b92915050565b60006020820190506108c2600083018461070a565b92915050565b600060208201905081810360008301526108e181610719565b9050919050565b6000602082019050818103600083015261090181610759565b9050919050565b6000602082019050818103600083015261092181610799565b9050919050565b60006020820190508181036000830152610941816107ff565b9050919050565b600060208201905061095d600083018461083f565b92915050565b600082825260208201905092915050565b600061097f82610992565b9050919050565b60008115159050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006109c7826109ce565b9050919050565b60006109d982610992565b9050919050565b60006109eb826109f2565b9050919050565b60006109fd82610992565b9050919050565b610a0d81610974565b8114610a1857600080fd5b50565b610a2481610986565b8114610a2f57600080fd5b50565b610a3b816109b2565b8114610a4657600080fd5b5056fea265627a7a723058203a9e55785ab4d69f8495deec1d1637d29d2b5bf09e5d2e2f1eede2bf2a735c0e6c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80632c4e722e146100675780632ddc79b714610085578063b31c710a146100a3578063c1684711146100c1578063c42bd05a146100dd578063d7625c88146100fb575b600080fd5b61006f61012b565b60405161007c9190610948565b60405180910390f35b61008d610137565b60405161009a9190610948565b60405180910390f35b6100ab61013d565b6040516100b89190610892565b60405180910390f35b6100db60048036036100d69190810190610662565b610162565b005b6100e5610456565b6040516100f291906108ad565b60405180910390f35b61011560048036036101109190810190610662565b61047c565b6040516101229190610877565b60405180910390f35b60038060000154905081565b60025481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600460008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16156101ef576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016101e690610928565b60405180910390fd5b6001600460008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555061024f610610565b60405180602001604052806000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16634ee2cd7e856002546040518363ffffffff1660e01b81526004016102b892919061084e565b60206040518083038186803b1580156102d057600080fd5b505afa1580156102e4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525061030891908101906106b4565b815250905061032160008261049c90919063ffffffff16565b61032b5750610453565b610333610610565b61035c6003604051806020016040529081600082015481525050836104b990919063ffffffff16565b9050600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166340c10f198483600001516040518363ffffffff1660e01b81526004016103bf92919061084e565b602060405180830381600087803b1580156103d957600080fd5b505af11580156103ed573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250610411919081019061068b565b610450576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610447906108c8565b60405180910390fd5b50505b50565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60046020528060005260406000206000915054906101000a900460ff1681565b60006104a78261050c565b60000151836000015111905092915050565b6104c1610610565b604051806020016040528061050184600001516104f3670de0b6b3a7640000886000015161054490919063ffffffff16565b6105b490919063ffffffff16565b815250905092915050565b610514610610565b604051806020016040528061053a670de0b6b3a76400008561054490919063ffffffff16565b8152509050919050565b60008083141561055757600090506105ae565b600082840290508284828161056857fe5b04146105a9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016105a090610908565b60405180910390fd5b809150505b92915050565b60008082116105f8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016105ef906108e8565b60405180910390fd5b600082848161060357fe5b0490508091505092915050565b6040518060200160405280600081525090565b60008135905061063281610a04565b92915050565b60008151905061064781610a1b565b92915050565b60008151905061065c81610a32565b92915050565b60006020828403121561067457600080fd5b600061068284828501610623565b91505092915050565b60006020828403121561069d57600080fd5b60006106ab84828501610638565b91505092915050565b6000602082840312156106c657600080fd5b60006106d48482850161064d565b91505092915050565b6106e681610974565b82525050565b6106f581610986565b82525050565b610704816109bc565b82525050565b610713816109e0565b82525050565b6000610726600b83610963565b91507f4d696e74206661696c65640000000000000000000000000000000000000000006000830152602082019050919050565b6000610766601a83610963565b91507f536166654d6174683a206469766973696f6e206279207a65726f0000000000006000830152602082019050919050565b60006107a6602183610963565b91507f536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f60008301527f77000000000000000000000000000000000000000000000000000000000000006020830152604082019050919050565b600061080c601783610963565b91507f416c7265616479206d6967726174656420746f6b656e730000000000000000006000830152602082019050919050565b610848816109b2565b82525050565b600060408201905061086360008301856106dd565b610870602083018461083f565b9392505050565b600060208201905061088c60008301846106ec565b92915050565b60006020820190506108a760008301846106fb565b92915050565b60006020820190506108c2600083018461070a565b92915050565b600060208201905081810360008301526108e181610719565b9050919050565b6000602082019050818103600083015261090181610759565b9050919050565b6000602082019050818103600083015261092181610799565b9050919050565b60006020820190508181036000830152610941816107ff565b9050919050565b600060208201905061095d600083018461083f565b92915050565b600082825260208201905092915050565b600061097f82610992565b9050919050565b60008115159050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006109c7826109ce565b9050919050565b60006109d982610992565b9050919050565b60006109eb826109f2565b9050919050565b60006109fd82610992565b9050919050565b610a0d81610974565b8114610a1857600080fd5b50565b610a2481610986565b8114610a2f57600080fd5b50565b610a3b816109b2565b8114610a4657600080fd5b5056fea265627a7a723058203a9e55785ab4d69f8495deec1d1637d29d2b5bf09e5d2e2f1eede2bf2a735c0e6c6578706572696d656e74616cf50037",
+  "sourceMap": "310:1704:23:-;;;949:253;8:9:-1;5:2;;;30:1;27;20:12;5:2;949:253:23;;;;;;;;;;;;;;;;;;;;;;1057:5;1050:4;:12;;;;;;;;;;;1098:9;1072:8;;:36;;;;;;;;;;;;;;;;;;1143:9;1118:8;;:35;;;;;;;;;;;;;;;;;;1176:8;;;;;;;;;;;:17;;;:19;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1176:19:23;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1176:19:23;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;1176:19:23;;;;;;;;;1163:10;:32;;;;949:253;;;310:1704;;5:134:-1;;89:6;83:13;74:22;;101:33;128:5;101:33;;;68:71;;;;;179:348;;304:4;292:9;287:3;283:19;279:30;276:2;;;322:1;319;312:12;276:2;340:20;355:4;340:20;;;331:29;;414:1;445:60;501:3;492:6;481:9;477:22;445:60;;;439:3;432:5;428:15;421:85;370:147;270:257;;;;;534:134;;618:6;612:13;603:22;;630:33;657:5;630:33;;;597:71;;;;;675:585;;;;849:2;837:9;828:7;824:23;820:32;817:2;;;865:1;862;855:12;817:2;900:1;917:89;998:7;989:6;978:9;974:22;917:89;;;907:99;;879:133;1043:2;1061:64;1117:7;1108:6;1097:9;1093:22;1061:64;;;1051:74;;1022:109;1162:2;1180:64;1236:7;1227:6;1216:9;1212:22;1180:64;;;1170:74;;1141:109;811:449;;;;;;1267:263;;1382:2;1370:9;1361:7;1357:23;1353:32;1350:2;;;1398:1;1395;1388:12;1350:2;1433:1;1450:64;1506:7;1497:6;1486:9;1482:22;1450:64;;;1440:74;;1412:108;1344:186;;;;;1537:256;;1599:2;1593:9;1583:19;;1637:4;1629:6;1625:17;1736:6;1724:10;1721:22;1700:18;1688:10;1685:34;1682:62;1679:2;;;1757:1;1754;1747:12;1679:2;1777:10;1773:2;1766:22;1577:216;;;;;1800:91;;1862:24;1880:5;1862:24;;;1851:35;;1845:46;;;;1898:121;;1971:42;1964:5;1960:54;1949:65;;1943:76;;;;2026:72;;2088:5;2077:16;;2071:27;;;;2105:117;2174:24;2192:5;2174:24;;;2167:5;2164:35;2154:2;;2213:1;2210;2203:12;2154:2;2148:74;;2229:117;2298:24;2316:5;2298:24;;;2291:5;2288:35;2278:2;;2337:1;2334;2327:12;2278:2;2272:74;;310:1704:23;;;;;;;",
+  "deployedSourceMap": "310:1704:23:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;310:1704:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;485:31;;;:::i;:::-;;;;;;;;;;;;;;;;457:22;;;:::i;:::-;;;;;;;;;;;;;;;;386:29;;;:::i;:::-;;;;;;;;;;;;;;;;1496:516;;;;;;;;;;;;;;;;:::i;:::-;;421:30;;;:::i;:::-;;;;;;;;;;;;;;;;522:43;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;485:31;;;;;;;;;:::o;457:22::-;;;;:::o;386:29::-;;;;;;;;;;;;;:::o;1496:516::-;1568:11;:24;1580:11;1568:24;;;;;;;;;;;;;;;;;;;;;;;;;1567:25;1559:61;;;;;;;;;;;;;;;;;;;;;;1657:4;1630:11;:24;1642:11;1630:24;;;;;;;;;;;;;;;;:31;;;;;;;;;;;;;;;;;;1672:37;;:::i;:::-;1712:66;;;;;;;;1732:8;;;;;;;;;;;:20;;;1753:11;1766:10;;1732:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1732:45:23;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1732:45:23;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;1732:45:23;;;;;;;;;1712:66;;;1672:106;;1794:27;1819:1;1794:10;:24;;:27;;;;:::i;:::-;1789:65;;1837:7;;;1789:65;1864:37;;:::i;:::-;1904:20;1919:4;1904:20;;;;;;;;;;;;;;;;;:10;:14;;:20;;;;:::i;:::-;1864:60;;1942:8;;;;;;;;;;;:13;;;1956:11;1969:10;:19;;;1942:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1942:47:23;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1942:47:23;;;;;;;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;1942:47:23;;;;;;;;;1934:71;;;;;;;;;;;;;;;;;;;;;;1496:516;;;;:::o;421:30::-;;;;;;;;;;;;;:::o;522:43::-;;;;;;;;;;;;;;;;;;;;;;:::o;991:144:8:-;1064:4;1100:19;1117:1;1100:16;:19::i;:::-;:28;;;1087:1;:10;;;:41;1080:48;;991:144;;;;:::o;4057:631::-;4131:15;;:::i;:::-;4622:59;;;;;;;;4631:49;4669:1;:10;;;4631:33;436:6;4631:1;:10;;;:14;;:33;;;;:::i;:::-;:37;;:49;;;;:::i;:::-;4622:59;;;4615:66;;4057:631;;;;:::o;612:132::-;669:15;;:::i;:::-;703:34;;;;;;;;712:24;436:6;712:1;:5;;:24;;;;:::i;:::-;703:34;;;696:41;;612:132;;;:::o;1693:458:44:-;1751:7;1996:1;1991;:6;1987:45;;;2020:1;2013:8;;;;1987:45;2042:9;2058:1;2054;:5;2042:17;;2086:1;2081;2077;:5;;;;;;:10;2069:56;;;;;;;;;;;;;;;;;;;;;;2143:1;2136:8;;;1693:458;;;;;:::o;2606:326::-;2664:7;2761:1;2757;:5;2749:44;;;;;;;;;;;;;;;;;;;;;;2803:9;2819:1;2815;:5;;;;;;2803:17;;2924:1;2917:8;;;2606:326;;;;:::o;310:1704:23:-;;;;;;;;;;;;;;:::o;5:130:-1:-;;85:6;72:20;63:29;;97:33;124:5;97:33;;;57:78;;;;;142:128;;223:6;217:13;208:22;;235:30;259:5;235:30;;;202:68;;;;;277:134;;361:6;355:13;346:22;;373:33;400:5;373:33;;;340:71;;;;;418:241;;522:2;510:9;501:7;497:23;493:32;490:2;;;538:1;535;528:12;490:2;573:1;590:53;635:7;626:6;615:9;611:22;590:53;;;580:63;;552:97;484:175;;;;;666:257;;778:2;766:9;757:7;753:23;749:32;746:2;;;794:1;791;784:12;746:2;829:1;846:61;899:7;890:6;879:9;875:22;846:61;;;836:71;;808:105;740:183;;;;;930:263;;1045:2;1033:9;1024:7;1020:23;1016:32;1013:2;;;1061:1;1058;1051:12;1013:2;1096:1;1113:64;1169:7;1160:6;1149:9;1145:22;1113:64;;;1103:74;;1075:108;1007:186;;;;;1200:113;1283:24;1301:5;1283:24;;;1278:3;1271:37;1265:48;;;1320:104;1397:21;1412:5;1397:21;;;1392:3;1385:34;1379:45;;;1431:172;1537:60;1591:5;1537:60;;;1532:3;1525:73;1519:84;;;1610:170;1715:59;1768:5;1715:59;;;1710:3;1703:72;1697:83;;;1788:364;;1948:67;2012:2;2007:3;1948:67;;;1941:74;;2048:66;2044:1;2039:3;2035:11;2028:87;2143:2;2138:3;2134:12;2127:19;;1934:218;;;;2161:364;;2321:67;2385:2;2380:3;2321:67;;;2314:74;;2421:66;2417:1;2412:3;2408:11;2401:87;2516:2;2511:3;2507:12;2500:19;;2307:218;;;;2534:465;;2694:67;2758:2;2753:3;2694:67;;;2687:74;;2794:66;2790:1;2785:3;2781:11;2774:87;2895:66;2890:2;2885:3;2881:12;2874:88;2990:2;2985:3;2981:12;2974:19;;2680:319;;;;3008:364;;3168:67;3232:2;3227:3;3168:67;;;3161:74;;3268:66;3264:1;3259:3;3255:11;3248:87;3363:2;3358:3;3354:12;3347:19;;3154:218;;;;3380:113;3463:24;3481:5;3463:24;;;3458:3;3451:37;3445:48;;;3500:324;;3646:2;3635:9;3631:18;3623:26;;3660:71;3728:1;3717:9;3713:17;3704:6;3660:71;;;3742:72;3810:2;3799:9;3795:18;3786:6;3742:72;;;3617:207;;;;;;3831:201;;3943:2;3932:9;3928:18;3920:26;;3957:65;4019:1;4008:9;4004:17;3995:6;3957:65;;;3914:118;;;;;4039:259;;4180:2;4169:9;4165:18;4157:26;;4194:94;4285:1;4274:9;4270:17;4261:6;4194:94;;;4151:147;;;;;4305:257;;4445:2;4434:9;4430:18;4422:26;;4459:93;4549:1;4538:9;4534:17;4525:6;4459:93;;;4416:146;;;;;4569:407;;4760:2;4749:9;4745:18;4737:26;;4810:9;4804:4;4800:20;4796:1;4785:9;4781:17;4774:47;4835:131;4961:4;4835:131;;;4827:139;;4731:245;;;;4983:407;;5174:2;5163:9;5159:18;5151:26;;5224:9;5218:4;5214:20;5210:1;5199:9;5195:17;5188:47;5249:131;5375:4;5249:131;;;5241:139;;5145:245;;;;5397:407;;5588:2;5577:9;5573:18;5565:26;;5638:9;5632:4;5628:20;5624:1;5613:9;5609:17;5602:47;5663:131;5789:4;5663:131;;;5655:139;;5559:245;;;;5811:407;;6002:2;5991:9;5987:18;5979:26;;6052:9;6046:4;6042:20;6038:1;6027:9;6023:17;6016:47;6077:131;6203:4;6077:131;;;6069:139;;5973:245;;;;6225:213;;6343:2;6332:9;6328:18;6320:26;;6357:71;6425:1;6414:9;6410:17;6401:6;6357:71;;;6314:124;;;;;6446:163;;6561:6;6556:3;6549:19;6598:4;6593:3;6589:14;6574:29;;6542:67;;;;;6617:91;;6679:24;6697:5;6679:24;;;6668:35;;6662:46;;;;6715:85;;6788:5;6781:13;6774:21;6763:32;;6757:43;;;;6807:121;;6880:42;6873:5;6869:54;6858:65;;6852:76;;;;6935:72;;6997:5;6986:16;;6980:27;;;;7014:167;;7116:60;7170:5;7116:60;;;7103:73;;7097:84;;;;7188:131;;7290:24;7308:5;7290:24;;;7277:37;;7271:48;;;;7326:165;;7427:59;7480:5;7427:59;;;7414:72;;7408:83;;;;7498:130;;7599:24;7617:5;7599:24;;;7586:37;;7580:48;;;;7635:117;7704:24;7722:5;7704:24;;;7697:5;7694:35;7684:2;;7743:1;7740;7733:12;7684:2;7678:74;;7759:111;7825:21;7840:5;7825:21;;;7818:5;7815:32;7805:2;;7861:1;7858;7851:12;7805:2;7799:71;;7877:117;7946:24;7964:5;7946:24;;;7939:5;7936:35;7926:2;;7985:1;7982;7975:12;7926:2;7920:74;",
+  "source": "pragma solidity ^0.5.0;\n\npragma experimental ABIEncoderV2;\n\nimport \"./ExpandedIERC20.sol\";\nimport \"./FixedPoint.sol\";\nimport \"openzeppelin-solidity/contracts/drafts/ERC20Snapshot.sol\";\n\n\n/**\n * @title Migration contract for VotingTokens.\n * @dev Handles migrating token holders from one token to the next.\n */\ncontract TokenMigrator {\n    using FixedPoint for FixedPoint.Unsigned;\n\n    ERC20Snapshot public oldToken;\n    ExpandedIERC20 public newToken;\n    uint public snapshotId;\n    FixedPoint.Unsigned public rate;\n    mapping(address => bool) public hasMigrated;\n\n    /**\n     * @notice Construct the TokenMigrator contract.\n     * @dev This function triggers the snapshot upon which all migrations will be based.\n     * @param _rate the number of old tokens it takes to generate one new token.\n     * @param _oldToken the address of the token being migrated from.\n     * @param _newToken the address of the token being migrated to.\n     */\n    constructor(FixedPoint.Unsigned memory _rate, address _oldToken, address _newToken) public {\n        rate = _rate;\n        newToken = ExpandedIERC20(_newToken);\n        oldToken = ERC20Snapshot(_oldToken);\n        snapshotId = oldToken.snapshot();\n    }\n\n    /**\n     * @notice Migrates the tokenHolder's old tokens to new tokens.\n     * @dev This function can only be called once per `tokenHolder`. Anyone can call this method on behalf of any other\n     * token holder since there is no disadvantage to receiving the tokens earlier.\n     */\n    function migrateTokens(address tokenHolder) external {\n        require(!hasMigrated[tokenHolder], \"Already migrated tokens\");\n        hasMigrated[tokenHolder] = true;\n\n        FixedPoint.Unsigned memory oldBalance = FixedPoint.Unsigned(oldToken.balanceOfAt(tokenHolder, snapshotId));\n\n        if (!oldBalance.isGreaterThan(0)) {\n            return;\n        }\n\n        FixedPoint.Unsigned memory newBalance = oldBalance.div(rate);\n        require(newToken.mint(tokenHolder, newBalance.rawValue), \"Mint failed\");\n    }\n}\n",
+  "sourcePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/TokenMigrator.sol",
+  "ast": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/TokenMigrator.sol",
+    "exportedSymbols": {
+      "TokenMigrator": [
+        3188
+      ]
+    },
+    "id": 3189,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3076,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:23"
+      },
+      {
+        "id": 3077,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "25:33:23"
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/ExpandedIERC20.sol",
+        "file": "./ExpandedIERC20.sol",
+        "id": 3078,
+        "nodeType": "ImportDirective",
+        "scope": 3189,
+        "sourceUnit": 616,
+        "src": "60:30:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/FixedPoint.sol",
+        "file": "./FixedPoint.sol",
+        "id": 3079,
+        "nodeType": "ImportDirective",
+        "scope": 3189,
+        "sourceUnit": 1193,
+        "src": "91:26:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/drafts/ERC20Snapshot.sol",
+        "file": "openzeppelin-solidity/contracts/drafts/ERC20Snapshot.sol",
+        "id": 3080,
+        "nodeType": "ImportDirective",
+        "scope": 3189,
+        "sourceUnit": 11393,
+        "src": "118:66:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Migration contract for VotingTokens.\n@dev Handles migrating token holders from one token to the next.",
+        "fullyImplemented": true,
+        "id": 3188,
+        "linearizedBaseContracts": [
+          3188
+        ],
+        "name": "TokenMigrator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 3083,
+            "libraryName": {
+              "contractScope": null,
+              "id": 3081,
+              "name": "FixedPoint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1192,
+              "src": "345:10:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_FixedPoint_$1192",
+                "typeString": "library FixedPoint"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "339:41:23",
+            "typeName": {
+              "contractScope": null,
+              "id": 3082,
+              "name": "FixedPoint.Unsigned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 848,
+              "src": "360:19:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                "typeString": "struct FixedPoint.Unsigned"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 3085,
+            "name": "oldToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "386:29:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+              "typeString": "contract ERC20Snapshot"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3084,
+              "name": "ERC20Snapshot",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11392,
+              "src": "386:13:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                "typeString": "contract ERC20Snapshot"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3087,
+            "name": "newToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "421:30:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+              "typeString": "contract ExpandedIERC20"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3086,
+              "name": "ExpandedIERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 615,
+              "src": "421:14:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                "typeString": "contract ExpandedIERC20"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3089,
+            "name": "snapshotId",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "457:22:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3088,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "457:4:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3091,
+            "name": "rate",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "485:31:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+              "typeString": "struct FixedPoint.Unsigned"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3090,
+              "name": "FixedPoint.Unsigned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 848,
+              "src": "485:19:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                "typeString": "struct FixedPoint.Unsigned"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3095,
+            "name": "hasMigrated",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "522:43:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 3094,
+              "keyType": {
+                "id": 3092,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "530:7:23",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "522:24:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 3093,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "541:4:23",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3126,
+              "nodeType": "Block",
+              "src": "1040:162:23",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3106,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3104,
+                      "name": "rate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3091,
+                      "src": "1050:4:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                        "typeString": "struct FixedPoint.Unsigned storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3105,
+                      "name": "_rate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3097,
+                      "src": "1057:5:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                        "typeString": "struct FixedPoint.Unsigned memory"
+                      }
+                    },
+                    "src": "1050:12:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                      "typeString": "struct FixedPoint.Unsigned storage ref"
+                    }
+                  },
+                  "id": 3107,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1050:12:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3112,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3108,
+                      "name": "newToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3087,
+                      "src": "1072:8:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                        "typeString": "contract ExpandedIERC20"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 3110,
+                          "name": "_newToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3101,
+                          "src": "1098:9:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3109,
+                        "name": "ExpandedIERC20",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 615,
+                        "src": "1083:14:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ExpandedIERC20_$615_$",
+                          "typeString": "type(contract ExpandedIERC20)"
+                        }
+                      },
+                      "id": 3111,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1083:25:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                        "typeString": "contract ExpandedIERC20"
+                      }
+                    },
+                    "src": "1072:36:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                      "typeString": "contract ExpandedIERC20"
+                    }
+                  },
+                  "id": 3113,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1072:36:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3118,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3114,
+                      "name": "oldToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3085,
+                      "src": "1118:8:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                        "typeString": "contract ERC20Snapshot"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 3116,
+                          "name": "_oldToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3099,
+                          "src": "1143:9:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3115,
+                        "name": "ERC20Snapshot",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11392,
+                        "src": "1129:13:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ERC20Snapshot_$11392_$",
+                          "typeString": "type(contract ERC20Snapshot)"
+                        }
+                      },
+                      "id": 3117,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1129:24:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                        "typeString": "contract ERC20Snapshot"
+                      }
+                    },
+                    "src": "1118:35:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                      "typeString": "contract ERC20Snapshot"
+                    }
+                  },
+                  "id": 3119,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1118:35:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3124,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3120,
+                      "name": "snapshotId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3089,
+                      "src": "1163:10:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3121,
+                          "name": "oldToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3085,
+                          "src": "1176:8:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                            "typeString": "contract ERC20Snapshot"
+                          }
+                        },
+                        "id": 3122,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "snapshot",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 11127,
+                        "src": "1176:17:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
+                          "typeString": "function () external returns (uint256)"
+                        }
+                      },
+                      "id": 3123,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1176:19:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1163:32:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3125,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1163:32:23"
+                }
+              ]
+            },
+            "documentation": "@notice Construct the TokenMigrator contract.\n@dev This function triggers the snapshot upon which all migrations will be based.\n@param _rate the number of old tokens it takes to generate one new token.\n@param _oldToken the address of the token being migrated from.\n@param _newToken the address of the token being migrated to.",
+            "id": 3127,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3102,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3097,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3127,
+                  "src": "961:32:23",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                    "typeString": "struct FixedPoint.Unsigned"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3096,
+                    "name": "FixedPoint.Unsigned",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 848,
+                    "src": "961:19:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                      "typeString": "struct FixedPoint.Unsigned"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3099,
+                  "name": "_oldToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3127,
+                  "src": "995:17:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3098,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "995:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3101,
+                  "name": "_newToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3127,
+                  "src": "1014:17:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3100,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1014:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "960:72:23"
+            },
+            "returnParameters": {
+              "id": 3103,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1040:0:23"
+            },
+            "scope": 3188,
+            "src": "949:253:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3186,
+              "nodeType": "Block",
+              "src": "1549:463:23",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3136,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1567:25:23",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 3133,
+                            "name": "hasMigrated",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3095,
+                            "src": "1568:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 3135,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 3134,
+                            "name": "tokenHolder",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3129,
+                            "src": "1580:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1568:24:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "416c7265616479206d6967726174656420746f6b656e73",
+                        "id": 3137,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1594:25:23",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_fcd037704fc7ab329f55fcd0c839c006e5185a0070b79b2c8ff55d75abc373d3",
+                          "typeString": "literal_string \"Already migrated tokens\""
+                        },
+                        "value": "Already migrated tokens"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_fcd037704fc7ab329f55fcd0c839c006e5185a0070b79b2c8ff55d75abc373d3",
+                          "typeString": "literal_string \"Already migrated tokens\""
+                        }
+                      ],
+                      "id": 3132,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12446,
+                        12447
+                      ],
+                      "referencedDeclaration": 12447,
+                      "src": "1559:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3138,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1559:61:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3139,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1559:61:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 3140,
+                        "name": "hasMigrated",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3095,
+                        "src": "1630:11:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 3142,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 3141,
+                        "name": "tokenHolder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3129,
+                        "src": "1642:11:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1630:24:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 3143,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1657:4:23",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1630:31:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 3145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1630:31:23"
+                },
+                {
+                  "assignments": [
+                    3149
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3149,
+                      "name": "oldBalance",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 3186,
+                      "src": "1672:37:23",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                        "typeString": "struct FixedPoint.Unsigned"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3148,
+                        "name": "FixedPoint.Unsigned",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 848,
+                        "src": "1672:19:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                          "typeString": "struct FixedPoint.Unsigned"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3158,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3154,
+                            "name": "tokenHolder",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3129,
+                            "src": "1753:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 3155,
+                            "name": "snapshotId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3089,
+                            "src": "1766:10:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3152,
+                            "name": "oldToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3085,
+                            "src": "1732:8:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                              "typeString": "contract ERC20Snapshot"
+                            }
+                          },
+                          "id": 3153,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "balanceOfAt",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 11155,
+                          "src": "1732:20:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_uint256_$",
+                            "typeString": "function (address,uint256) view external returns (uint256)"
+                          }
+                        },
+                        "id": 3156,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1732:45:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3150,
+                        "name": "FixedPoint",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1192,
+                        "src": "1712:10:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPoint_$1192_$",
+                          "typeString": "type(library FixedPoint)"
+                        }
+                      },
+                      "id": 3151,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "Unsigned",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 848,
+                      "src": "1712:19:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Unsigned_$848_storage_ptr_$",
+                        "typeString": "type(struct FixedPoint.Unsigned storage pointer)"
+                      }
+                    },
+                    "id": 3157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1712:66:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_memory",
+                      "typeString": "struct FixedPoint.Unsigned memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1672:106:23"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "id": 3163,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "1793:28:23",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 3161,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1819:1:23",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3159,
+                          "name": "oldBalance",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3149,
+                          "src": "1794:10:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                            "typeString": "struct FixedPoint.Unsigned memory"
+                          }
+                        },
+                        "id": 3160,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isGreaterThan",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 897,
+                        "src": "1794:24:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_struct$_Unsigned_$848_memory_ptr_$_t_uint256_$returns$_t_bool_$bound_to$_t_struct$_Unsigned_$848_memory_ptr_$",
+                          "typeString": "function (struct FixedPoint.Unsigned memory,uint256) pure returns (bool)"
+                        }
+                      },
+                      "id": 3162,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1794:27:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 3166,
+                  "nodeType": "IfStatement",
+                  "src": "1789:65:23",
+                  "trueBody": {
+                    "id": 3165,
+                    "nodeType": "Block",
+                    "src": "1823:31:23",
+                    "statements": [
+                      {
+                        "expression": null,
+                        "functionReturnParameters": 3131,
+                        "id": 3164,
+                        "nodeType": "Return",
+                        "src": "1837:7:23"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    3170
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3170,
+                      "name": "newBalance",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 3186,
+                      "src": "1864:37:23",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                        "typeString": "struct FixedPoint.Unsigned"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3169,
+                        "name": "FixedPoint.Unsigned",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 848,
+                        "src": "1864:19:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                          "typeString": "struct FixedPoint.Unsigned"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3175,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3173,
+                        "name": "rate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3091,
+                        "src": "1919:4:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                          "typeString": "struct FixedPoint.Unsigned storage ref"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                          "typeString": "struct FixedPoint.Unsigned storage ref"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3171,
+                        "name": "oldBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "1904:10:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                          "typeString": "struct FixedPoint.Unsigned memory"
+                        }
+                      },
+                      "id": 3172,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "div",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1117,
+                      "src": "1904:14:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_Unsigned_$848_memory_ptr_$_t_struct$_Unsigned_$848_memory_ptr_$returns$_t_struct$_Unsigned_$848_memory_ptr_$bound_to$_t_struct$_Unsigned_$848_memory_ptr_$",
+                        "typeString": "function (struct FixedPoint.Unsigned memory,struct FixedPoint.Unsigned memory) pure returns (struct FixedPoint.Unsigned memory)"
+                      }
+                    },
+                    "id": 3174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1904:20:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                      "typeString": "struct FixedPoint.Unsigned memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1864:60:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3179,
+                            "name": "tokenHolder",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3129,
+                            "src": "1956:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3180,
+                              "name": "newBalance",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3170,
+                              "src": "1969:10:23",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                                "typeString": "struct FixedPoint.Unsigned memory"
+                              }
+                            },
+                            "id": 3181,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "rawValue",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 847,
+                            "src": "1969:19:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3177,
+                            "name": "newToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3087,
+                            "src": "1942:8:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                              "typeString": "contract ExpandedIERC20"
+                            }
+                          },
+                          "id": 3178,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "mint",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 614,
+                          "src": "1942:13:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) external returns (bool)"
+                          }
+                        },
+                        "id": 3182,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1942:47:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d696e74206661696c6564",
+                        "id": 3183,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1991:13:23",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_28c39b78ba029f0fc13f1547f14e04b4ee342add2eb73cbd87e27098ff34658b",
+                          "typeString": "literal_string \"Mint failed\""
+                        },
+                        "value": "Mint failed"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_28c39b78ba029f0fc13f1547f14e04b4ee342add2eb73cbd87e27098ff34658b",
+                          "typeString": "literal_string \"Mint failed\""
+                        }
+                      ],
+                      "id": 3176,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12446,
+                        12447
+                      ],
+                      "referencedDeclaration": 12447,
+                      "src": "1934:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3184,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1934:71:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3185,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1934:71:23"
+                }
+              ]
+            },
+            "documentation": "@notice Migrates the tokenHolder's old tokens to new tokens.\n@dev This function can only be called once per `tokenHolder`. Anyone can call this method on behalf of any other\ntoken holder since there is no disadvantage to receiving the tokens earlier.",
+            "id": 3187,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "migrateTokens",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3130,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3129,
+                  "name": "tokenHolder",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3187,
+                  "src": "1519:19:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3128,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1519:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1518:21:23"
+            },
+            "returnParameters": {
+              "id": 3131,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1549:0:23"
+            },
+            "scope": 3188,
+            "src": "1496:516:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3189,
+        "src": "310:1704:23"
+      }
+    ],
+    "src": "0:2015:23"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/TokenMigrator.sol",
+    "exportedSymbols": {
+      "TokenMigrator": [
+        3188
+      ]
+    },
+    "id": 3189,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3076,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:23"
+      },
+      {
+        "id": 3077,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "25:33:23"
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/ExpandedIERC20.sol",
+        "file": "./ExpandedIERC20.sol",
+        "id": 3078,
+        "nodeType": "ImportDirective",
+        "scope": 3189,
+        "sourceUnit": 616,
+        "src": "60:30:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/kendrick/Development/Ethereum/defi-dy/contracts/uma/core/contracts/FixedPoint.sol",
+        "file": "./FixedPoint.sol",
+        "id": 3079,
+        "nodeType": "ImportDirective",
+        "scope": 3189,
+        "sourceUnit": 1193,
+        "src": "91:26:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/drafts/ERC20Snapshot.sol",
+        "file": "openzeppelin-solidity/contracts/drafts/ERC20Snapshot.sol",
+        "id": 3080,
+        "nodeType": "ImportDirective",
+        "scope": 3189,
+        "sourceUnit": 11393,
+        "src": "118:66:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Migration contract for VotingTokens.\n@dev Handles migrating token holders from one token to the next.",
+        "fullyImplemented": true,
+        "id": 3188,
+        "linearizedBaseContracts": [
+          3188
+        ],
+        "name": "TokenMigrator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 3083,
+            "libraryName": {
+              "contractScope": null,
+              "id": 3081,
+              "name": "FixedPoint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1192,
+              "src": "345:10:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_FixedPoint_$1192",
+                "typeString": "library FixedPoint"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "339:41:23",
+            "typeName": {
+              "contractScope": null,
+              "id": 3082,
+              "name": "FixedPoint.Unsigned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 848,
+              "src": "360:19:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                "typeString": "struct FixedPoint.Unsigned"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 3085,
+            "name": "oldToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "386:29:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+              "typeString": "contract ERC20Snapshot"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3084,
+              "name": "ERC20Snapshot",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11392,
+              "src": "386:13:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                "typeString": "contract ERC20Snapshot"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3087,
+            "name": "newToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "421:30:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+              "typeString": "contract ExpandedIERC20"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3086,
+              "name": "ExpandedIERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 615,
+              "src": "421:14:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                "typeString": "contract ExpandedIERC20"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3089,
+            "name": "snapshotId",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "457:22:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 3088,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "457:4:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3091,
+            "name": "rate",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "485:31:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+              "typeString": "struct FixedPoint.Unsigned"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 3090,
+              "name": "FixedPoint.Unsigned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 848,
+              "src": "485:19:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                "typeString": "struct FixedPoint.Unsigned"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 3095,
+            "name": "hasMigrated",
+            "nodeType": "VariableDeclaration",
+            "scope": 3188,
+            "src": "522:43:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 3094,
+              "keyType": {
+                "id": 3092,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "530:7:23",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "522:24:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 3093,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "541:4:23",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3126,
+              "nodeType": "Block",
+              "src": "1040:162:23",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3106,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3104,
+                      "name": "rate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3091,
+                      "src": "1050:4:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                        "typeString": "struct FixedPoint.Unsigned storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3105,
+                      "name": "_rate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3097,
+                      "src": "1057:5:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                        "typeString": "struct FixedPoint.Unsigned memory"
+                      }
+                    },
+                    "src": "1050:12:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                      "typeString": "struct FixedPoint.Unsigned storage ref"
+                    }
+                  },
+                  "id": 3107,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1050:12:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3112,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3108,
+                      "name": "newToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3087,
+                      "src": "1072:8:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                        "typeString": "contract ExpandedIERC20"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 3110,
+                          "name": "_newToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3101,
+                          "src": "1098:9:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3109,
+                        "name": "ExpandedIERC20",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 615,
+                        "src": "1083:14:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ExpandedIERC20_$615_$",
+                          "typeString": "type(contract ExpandedIERC20)"
+                        }
+                      },
+                      "id": 3111,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1083:25:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                        "typeString": "contract ExpandedIERC20"
+                      }
+                    },
+                    "src": "1072:36:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                      "typeString": "contract ExpandedIERC20"
+                    }
+                  },
+                  "id": 3113,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1072:36:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3118,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3114,
+                      "name": "oldToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3085,
+                      "src": "1118:8:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                        "typeString": "contract ERC20Snapshot"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 3116,
+                          "name": "_oldToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3099,
+                          "src": "1143:9:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 3115,
+                        "name": "ERC20Snapshot",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11392,
+                        "src": "1129:13:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ERC20Snapshot_$11392_$",
+                          "typeString": "type(contract ERC20Snapshot)"
+                        }
+                      },
+                      "id": 3117,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1129:24:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                        "typeString": "contract ERC20Snapshot"
+                      }
+                    },
+                    "src": "1118:35:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                      "typeString": "contract ERC20Snapshot"
+                    }
+                  },
+                  "id": 3119,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1118:35:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3124,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 3120,
+                      "name": "snapshotId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3089,
+                      "src": "1163:10:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3121,
+                          "name": "oldToken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3085,
+                          "src": "1176:8:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                            "typeString": "contract ERC20Snapshot"
+                          }
+                        },
+                        "id": 3122,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "snapshot",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 11127,
+                        "src": "1176:17:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_nonpayable$__$returns$_t_uint256_$",
+                          "typeString": "function () external returns (uint256)"
+                        }
+                      },
+                      "id": 3123,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1176:19:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1163:32:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3125,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1163:32:23"
+                }
+              ]
+            },
+            "documentation": "@notice Construct the TokenMigrator contract.\n@dev This function triggers the snapshot upon which all migrations will be based.\n@param _rate the number of old tokens it takes to generate one new token.\n@param _oldToken the address of the token being migrated from.\n@param _newToken the address of the token being migrated to.",
+            "id": 3127,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3102,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3097,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3127,
+                  "src": "961:32:23",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                    "typeString": "struct FixedPoint.Unsigned"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3096,
+                    "name": "FixedPoint.Unsigned",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 848,
+                    "src": "961:19:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                      "typeString": "struct FixedPoint.Unsigned"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3099,
+                  "name": "_oldToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3127,
+                  "src": "995:17:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3098,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "995:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3101,
+                  "name": "_newToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3127,
+                  "src": "1014:17:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3100,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1014:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "960:72:23"
+            },
+            "returnParameters": {
+              "id": 3103,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1040:0:23"
+            },
+            "scope": 3188,
+            "src": "949:253:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3186,
+              "nodeType": "Block",
+              "src": "1549:463:23",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3136,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1567:25:23",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 3133,
+                            "name": "hasMigrated",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3095,
+                            "src": "1568:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                              "typeString": "mapping(address => bool)"
+                            }
+                          },
+                          "id": 3135,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 3134,
+                            "name": "tokenHolder",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3129,
+                            "src": "1580:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1568:24:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "416c7265616479206d6967726174656420746f6b656e73",
+                        "id": 3137,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1594:25:23",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_fcd037704fc7ab329f55fcd0c839c006e5185a0070b79b2c8ff55d75abc373d3",
+                          "typeString": "literal_string \"Already migrated tokens\""
+                        },
+                        "value": "Already migrated tokens"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_fcd037704fc7ab329f55fcd0c839c006e5185a0070b79b2c8ff55d75abc373d3",
+                          "typeString": "literal_string \"Already migrated tokens\""
+                        }
+                      ],
+                      "id": 3132,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12446,
+                        12447
+                      ],
+                      "referencedDeclaration": 12447,
+                      "src": "1559:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3138,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1559:61:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3139,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1559:61:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3144,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 3140,
+                        "name": "hasMigrated",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3095,
+                        "src": "1630:11:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 3142,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 3141,
+                        "name": "tokenHolder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3129,
+                        "src": "1642:11:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1630:24:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 3143,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1657:4:23",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1630:31:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 3145,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1630:31:23"
+                },
+                {
+                  "assignments": [
+                    3149
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3149,
+                      "name": "oldBalance",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 3186,
+                      "src": "1672:37:23",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                        "typeString": "struct FixedPoint.Unsigned"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3148,
+                        "name": "FixedPoint.Unsigned",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 848,
+                        "src": "1672:19:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                          "typeString": "struct FixedPoint.Unsigned"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3158,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3154,
+                            "name": "tokenHolder",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3129,
+                            "src": "1753:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "id": 3155,
+                            "name": "snapshotId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3089,
+                            "src": "1766:10:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3152,
+                            "name": "oldToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3085,
+                            "src": "1732:8:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ERC20Snapshot_$11392",
+                              "typeString": "contract ERC20Snapshot"
+                            }
+                          },
+                          "id": 3153,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "balanceOfAt",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 11155,
+                          "src": "1732:20:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_uint256_$",
+                            "typeString": "function (address,uint256) view external returns (uint256)"
+                          }
+                        },
+                        "id": 3156,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1732:45:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3150,
+                        "name": "FixedPoint",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1192,
+                        "src": "1712:10:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPoint_$1192_$",
+                          "typeString": "type(library FixedPoint)"
+                        }
+                      },
+                      "id": 3151,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "Unsigned",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 848,
+                      "src": "1712:19:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Unsigned_$848_storage_ptr_$",
+                        "typeString": "type(struct FixedPoint.Unsigned storage pointer)"
+                      }
+                    },
+                    "id": 3157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1712:66:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_memory",
+                      "typeString": "struct FixedPoint.Unsigned memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1672:106:23"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "id": 3163,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "1793:28:23",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 3161,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1819:1:23",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3159,
+                          "name": "oldBalance",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3149,
+                          "src": "1794:10:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                            "typeString": "struct FixedPoint.Unsigned memory"
+                          }
+                        },
+                        "id": 3160,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isGreaterThan",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 897,
+                        "src": "1794:24:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_struct$_Unsigned_$848_memory_ptr_$_t_uint256_$returns$_t_bool_$bound_to$_t_struct$_Unsigned_$848_memory_ptr_$",
+                          "typeString": "function (struct FixedPoint.Unsigned memory,uint256) pure returns (bool)"
+                        }
+                      },
+                      "id": 3162,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1794:27:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 3166,
+                  "nodeType": "IfStatement",
+                  "src": "1789:65:23",
+                  "trueBody": {
+                    "id": 3165,
+                    "nodeType": "Block",
+                    "src": "1823:31:23",
+                    "statements": [
+                      {
+                        "expression": null,
+                        "functionReturnParameters": 3131,
+                        "id": 3164,
+                        "nodeType": "Return",
+                        "src": "1837:7:23"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    3170
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3170,
+                      "name": "newBalance",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 3186,
+                      "src": "1864:37:23",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                        "typeString": "struct FixedPoint.Unsigned"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3169,
+                        "name": "FixedPoint.Unsigned",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 848,
+                        "src": "1864:19:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage_ptr",
+                          "typeString": "struct FixedPoint.Unsigned"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3175,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3173,
+                        "name": "rate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3091,
+                        "src": "1919:4:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                          "typeString": "struct FixedPoint.Unsigned storage ref"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_storage",
+                          "typeString": "struct FixedPoint.Unsigned storage ref"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3171,
+                        "name": "oldBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3149,
+                        "src": "1904:10:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                          "typeString": "struct FixedPoint.Unsigned memory"
+                        }
+                      },
+                      "id": 3172,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "div",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1117,
+                      "src": "1904:14:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_Unsigned_$848_memory_ptr_$_t_struct$_Unsigned_$848_memory_ptr_$returns$_t_struct$_Unsigned_$848_memory_ptr_$bound_to$_t_struct$_Unsigned_$848_memory_ptr_$",
+                        "typeString": "function (struct FixedPoint.Unsigned memory,struct FixedPoint.Unsigned memory) pure returns (struct FixedPoint.Unsigned memory)"
+                      }
+                    },
+                    "id": 3174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1904:20:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                      "typeString": "struct FixedPoint.Unsigned memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1864:60:23"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3179,
+                            "name": "tokenHolder",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3129,
+                            "src": "1956:11:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 3180,
+                              "name": "newBalance",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3170,
+                              "src": "1969:10:23",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Unsigned_$848_memory_ptr",
+                                "typeString": "struct FixedPoint.Unsigned memory"
+                              }
+                            },
+                            "id": 3181,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "rawValue",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 847,
+                            "src": "1969:19:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3177,
+                            "name": "newToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3087,
+                            "src": "1942:8:23",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ExpandedIERC20_$615",
+                              "typeString": "contract ExpandedIERC20"
+                            }
+                          },
+                          "id": 3178,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "mint",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 614,
+                          "src": "1942:13:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (address,uint256) external returns (bool)"
+                          }
+                        },
+                        "id": 3182,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1942:47:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d696e74206661696c6564",
+                        "id": 3183,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1991:13:23",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_28c39b78ba029f0fc13f1547f14e04b4ee342add2eb73cbd87e27098ff34658b",
+                          "typeString": "literal_string \"Mint failed\""
+                        },
+                        "value": "Mint failed"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_28c39b78ba029f0fc13f1547f14e04b4ee342add2eb73cbd87e27098ff34658b",
+                          "typeString": "literal_string \"Mint failed\""
+                        }
+                      ],
+                      "id": 3176,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        12446,
+                        12447
+                      ],
+                      "referencedDeclaration": 12447,
+                      "src": "1934:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3184,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1934:71:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3185,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1934:71:23"
+                }
+              ]
+            },
+            "documentation": "@notice Migrates the tokenHolder's old tokens to new tokens.\n@dev This function can only be called once per `tokenHolder`. Anyone can call this method on behalf of any other\ntoken holder since there is no disadvantage to receiving the tokens earlier.",
+            "id": 3187,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "migrateTokens",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3130,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3129,
+                  "name": "tokenHolder",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3187,
+                  "src": "1519:19:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3128,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1519:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1518:21:23"
+            },
+            "returnParameters": {
+              "id": 3131,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1549:0:23"
+            },
+            "scope": 3188,
+            "src": "1496:516:23",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3189,
+        "src": "310:1704:23"
+      }
+    ],
+    "src": "0:2015:23"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-11-09T21:34:17.633Z",
+  "devdoc": {
+    "details": "Handles migrating token holders from one token to the next.",
+    "methods": {
+      "constructor": {
+        "details": "This function triggers the snapshot upon which all migrations will be based.",
+        "params": {
+          "_newToken": "the address of the token being migrated to.",
+          "_oldToken": "the address of the token being migrated from.",
+          "_rate": "the number of old tokens it takes to generate one new token."
+        }
+      },
+      "migrateTokens(address)": {
+        "details": "This function can only be called once per `tokenHolder`. Anyone can call this method on behalf of any other token holder since there is no disadvantage to receiving the tokens earlier."
+      }
+    },
+    "title": "Migration contract for VotingTokens."
+  },
+  "userdoc": {
+    "methods": {
+      "constructor": "Construct the TokenMigrator contract.",
+      "migrateTokens(address)": {
+        "notice": "Migrates the tokenHolder's old tokens to new tokens."
+      }
+    }
+  }
+}
