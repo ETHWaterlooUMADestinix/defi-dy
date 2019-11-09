@@ -35,7 +35,7 @@ contract DefiDyMaths is ChainlinkClient, Ownable {
     setPublicChainlinkToken();
   }
 
-  function requestEthereumPrice(address _oracle, string _jobId)
+  function requestPrice(address _oracle, string _jobId)
     public
     onlyOwner
   { exchangeVal = 10**18;
