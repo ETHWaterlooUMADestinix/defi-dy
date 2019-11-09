@@ -1,20 +1,20 @@
 {
-  "BTCETH": {
+  "DAICMP": {
     "dappConfig": {
       "comment": "expiry: January 1st, 2020 12:00 AM UTC, supportedMove: 0.2 corresponds to 20%",
-      "expiries": [0],
+      "expiries": [1577836800],
       "supportedMove": "0.2"
     },
     "uploaderConfig": {
       "publishInterval": "900",
       "minDelay": "0",
       "numerator": {
-        "dataSource": "Coinbase",
-        "assetName": "BTC-USD"
+        "dataSource": "Compound",
+        "assetName": "API"
       },
       "denominator": {
-        "dataSource": "Coinbase",
-        "assetName": "ETH-USD"
+        "dataSource": "Compound",
+        "assetName": "API"
       }
     }
   }

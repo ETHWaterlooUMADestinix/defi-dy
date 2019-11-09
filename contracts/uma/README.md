@@ -4,7 +4,7 @@ Note: This token was built using the [UMA Protocol](https://github.com/UMAprotoc
 # Deployment steps
 ```bash
 # In another terminal, run
-npx ganache-cli -p 9545
+npx ganache-cli -p 9545 -m helloworld -f https://rinkeby.infura.io/v3/9317010b1b6343558b7eff9d25934f38 -i 11
 
 yarn install
 
