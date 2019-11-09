@@ -2,10 +2,14 @@ import React from 'react'
 
 export default function AssetRow(props) {
     function buyToken() {
+        const tokenDecimals = props.web3.utils.toBN(17);
+        const tokenAmountToTransfer = props.web3.utils.toBN(1);
+        const calculatedTransferValue = props.web3.utils.toHex(tokenAmountToTransfer.mul(props.web3.utils.toBN(10).pow(tokenDecimals)));
+
         props.web3.eth.sendTransaction({
             from: '0x0000000000000000000000000000000000000000',
-            to: '0x136F72c1b4F4d8Ed741B332Ea34E9C8633cB8E3F',
-            value: 2
+            to: '0x78aC6DCFD5Ba5C674C42c9642d87393Ab41bd6ab',
+            value: calculatedTransferValue
         });
     }
 

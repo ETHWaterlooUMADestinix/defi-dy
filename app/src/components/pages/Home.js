@@ -9,7 +9,7 @@ import { Web3Wrapper } from '@0x/web3-wrapper';
 let tokenAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
 
 export default function Home(props) {
-    const [balance, setBalance] = useState(0)
+    const [balance, setBalance] = useState(props.web3.utils.toBN(0))
 
     useEffect(() => {
         let minABI = [
@@ -45,18 +45,6 @@ export default function Home(props) {
                     setBalance(result)
                 });
         });
-
-
-
-        // Call balanceOf function
-        // contract.balanceOf(walletAddress, (error, balance) => {
-        //     // Get decimals
-        //     contract.decimals((error, decimals) => {
-        //         // calculate a balance
-        //         balance = balance.div(10**decimals);
-        //         console.log(balance.toString());
-        //     });
-        // });
 
         const code = `
             zeroExInstant.render(
@@ -130,7 +118,7 @@ export default function Home(props) {
                     Exchange your tokens
                 </button>
                 <p>
-                    Current balance: {balance} dedy
+                    Current balance: {props.web3.utils.fromWei(balance, 'ether')} dedy
                 </p>
             </a>
         </main>
