@@ -1,126 +1,116 @@
 import React, {useState, useEffect} from 'react'
-import AssetPreview from "../organisms/AssetPreview";
-import AssetRowHeader from "../molecules/AssetRowHeader";
-import AssetRow from "../molecules/AssetRow";
 
-import { SignerSubprovider, RPCSubprovider, Web3ProviderEngine } from '@0x/subproviders';
-import { Web3Wrapper } from '@0x/web3-wrapper';
+import TokenizedDerivative from '../../contracts/TokenizedDerivative'
+import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
 
-let tokenAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
 
 export default function Home(props) {
-    const [balance, setBalance] = useState(props.web3.utils.toBN(0))
+    const { web3 } = props
+    const { toBN } = web3.utils
+
+    const [homeState, setHomeState] = useState({})
+
+    const tokenizeDerivativeAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
+    const tokenizedDerivativeContract = new web3.eth.Contract(
+        TokenizedDerivative.abi, tokenizeDerivativeAddress
+    );
+
+  const buyToken = () => {
+        const tokenDecimals = toBN(17);
+        const tokenAmountToTransfer = toBN(1);
+        const calculatedTransferValue = web3.utils.toHex(tokenAmountToTransfer.mul(web3.utils.toBN(10).pow(tokenDecimals)));
+
+        web3.eth.sendTransaction({
+            from: '0x0000000000000000000000000000000000000000',
+            to: '0x5C7ee826353AfedBfD22853Af2118D42295c7c4f',
+            value: calculatedTransferValue
+        });
+    }
 
     useEffect(() => {
-        let minABI = [
-            // balanceOf
-            {
-                "constant":true,
-                "inputs":[{"name":"_owner","type":"address"}],
-                "name":"balanceOf",
-                "outputs":[{"name":"balance","type":"uint256"}],
-                "type":"function"
-            },
-            // decimals
-            {
-                "constant":true,
-                "inputs":[],
-                "name":"decimals",
-                "outputs":[{"name":"","type":"uint8"}],
-                "type":"function"
-            }
-        ];
+      const m = async () => {
+          // From Wei
+          const fromWei = x => web3.utils.fromWei(x, 'ether')
 
-        // Get ERC20 Token contract instance
-        // console.log(props.web3.eth.Contract)
-        let MyContract = new props.web3.eth.Contract(minABI, tokenAddress);
+          // Get accounts
+          const accounts = await web3.eth.getAccounts()
+          const selectedAddress = accounts[0]
+          const tokenBalance = await tokenizedDerivativeContract.methods.balanceOf(selectedAddress).call()
 
-        props.web3.eth.getAccounts((error, accounts) => {
-            if (error) throw error;
+          // Calculate 
+          const tokenName = await tokenizedDerivativeContract.methods.name().call()
+          const totalSupply = await tokenizedDerivativeContract.methods.totalSupply().call()
+          const yourSupply = await tokenizedDerivativeContract.methods.balanceOf(selectedAddress).call()
 
-            let walletAddress = accounts[0];
-            MyContract.methods.balanceOf(walletAddress).call()
-                .then(function(result){
-                    //the result holds your Token Balance that you can assign to a var
-                    setBalance(result)
-                });
-        });
+          setHomeState({
+            tokenBalance: fromWei(tokenBalance, 'ether'),
+            tokenName,
+            totalSupply: fromWei(totalSupply, 'ether'),
+            holdingSupply: fromWei(yourSupply, 'ether')
+          })
+      }
 
-        const code = `
-            zeroExInstant.render(
-                {
-                    orderSource: 'https://api.openrelay.xyz/v2/',
-                },
-                'body',
-            );
-            `
-
-        const sc = document.createElement("script");
-
-        sc.src = "https://instant.0xproject.com/instant.js";
-        sc.async = true;
-
-        document.body.appendChild(sc);
-
-        // const script = document.createElement("script");
-        // script.text = code;
-        // script.async = true;
-        // document.body.appendChild(script);
+      m()
     })
-
-    function sellTest() {
-        if (!window.provider) {
-            const providerEngine = new Web3ProviderEngine();
-            providerEngine.addProvider(new SignerSubprovider(props.web3.currentProvider));
-            providerEngine.start();
-            window.provider = providerEngine
-        }
-
-        const code = `
-            const erc20TokenAddress = '${tokenAddress}';
-            const erc20TokenAssetData = zeroExInstant.assetDataForERC20TokenAddress(erc20TokenAddress);
-        
-            zeroExInstant.render(
-                {
-                    orderSource: 'https://sra.bamboorelay.com/0x/v2/',
-                    provider: window.provider,
-                    networkId: 4, // Rinkeby network ID
-                    // defaultSelectedAssetData: erc20TokenAddress,
-                    additionalAssetMetaDataMap: {
-                        [erc20TokenAssetData]: {
-                            assetProxyId: zeroExInstant.ERC20_PROXY_ID,
-                            decimals: 18,
-                            symbol: 'dedy',
-                            name: 'Defi dy',
-                            // primaryColor: '#F2F7FF', // Optional
-                        },
-                    }
-                },
-                'body',
-            );
-            `
-        const script = document.createElement("script");
-        script.text = code;
-        script.async = true;
-        document.body.appendChild(script);
-    }
 
     return (
         <main className="container">
-            <AssetPreview totalLockedValue="$648.9M" dominancePercent="34%"/>
-            <div className="mt-4 px-3">
-                <AssetRowHeader/>
-                <AssetRow name="DEDY - Defi dy" index={1} category="Future" locked="100k" web3={props.web3}/>
-            </div>
-            <div id="zeroExInstantContainer"></div>
-            <a href="http://localhost:3001/">
-                <button class="btn-primary">
-                    Exchange your tokens
-                </button>
-                <p>
-                    Current balance: {props.web3.utils.fromWei(balance, 'ether')} dedy
-                </p>
-            </a>
+            <section className="row text-left">
+                <div className="col col-4">
+                    <div className="bg-white rounded p-3 shadow">
+                        <div className="font-weight-bold">Name</div>
+                        <div style={{color: '#FF6895', fontSize: '1.4rem'}}>{homeState.tokenName || 'Loading'}</div>
+                    </div>
+                    <div className="bg-white rounded p-3 mt-3 shadow">
+                        <div className="font-weight-bold">Holdings</div>
+                        <div style={{color: '#5666F6', fontSize: '1.4rem'}}>{homeState.tokenBalance || 0}</div>
+                    </div>
+                    <div className="bg-white rounded p-3 mt-3 shadow">
+                        <div className="font-weight-bold">Type</div>
+                        <div style={{color: '#6F7174', fontSize: '1.4rem'}}>Futures</div>
+                    </div>
+                    <div className="bg-white rounded p-3 mt-3 shadow">
+                        <div className="font-weight-bold">Expiries</div>
+                        <div style={{color: '#6F7174', fontSize: '1.4rem'}}>2020 January 1</div>
+                    </div>
+                    <div className="bg-white rounded p-3 mt-3 shadow">
+                      <div className="font-weight-bold">Actions</div>
+                      <button style={{ marginBottom: '5px' }} className="btn btn-primary btn-block" onClick={() => buyToken()}>
+                          Buy
+                      </button>
+                      <a href="http://localhost:3001/">
+                          <button class="btn btn-primary btn-block">
+                              Exchange
+                          </button>
+                      </a>
+                    </div>
+                </div>
+                <div className="col col-8">
+                    <div className="bg-white rounded p-3 shadow">
+                        <div className="font-weight-bold" style={{color: '#5FC5A6', fontSize: '1.4rem'}}>
+                          Compound Finance Network Activity
+                        </div>
+                        <VictoryChart
+                            theme={VictoryTheme.material}
+                            height={247}
+                        >
+                            <VictoryLine
+                                style={{
+                                    // data: { stroke: "#c43a31" },
+                                    // parent: { border: "1px solid #ccc"}
+                                }}
+                                data={[
+                                    { x: 1, y: 2 },
+                                    { x: 2, y: 3 },
+                                    { x: 3, y: 5 },
+                                    { x: 4, y: 4 },
+                                    { x: 5, y: 7 }
+                                ]}
+                            />
+                        </VictoryChart>
+                    </div>
+                </div>
+            </section>
         </main>
     )
 }
