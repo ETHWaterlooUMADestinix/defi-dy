@@ -9,6 +9,8 @@ export default function Home(props) {
     const { web3 } = props
     const { toBN } = web3.utils
 
+    const [buyAmount, setBuyAmount] = useState(1)
+
     const [chart, setChartOptions]= useState({
         options: {
             chart: {
@@ -34,8 +36,8 @@ export default function Home(props) {
     );
 
   const buyToken = () => {
-        const tokenDecimals = toBN(18);
-        const tokenAmountToTransfer = toBN(1);
+        const tokenDecimals = toBN(15);
+        const tokenAmountToTransfer = toBN(buyAmount);
         const calculatedTransferValue = web3.utils.toHex(tokenAmountToTransfer.mul(web3.utils.toBN(10).pow(tokenDecimals)));
 
         web3.eth.sendTransaction({
@@ -118,7 +120,8 @@ export default function Home(props) {
                     </div>
                     <div className="bg-white rounded p-3 mt-3 shadow">
                       <div className="font-weight-bold mb-3">Actions</div>
-                      <button style={{ marginBottom: '5px' }} className="btn btn-primary btn-block font-weight-bold" onClick={() => buyToken()}>
+                        <input type="number" min="0" className="w-100" onChange={e => setBuyAmount(e.target.value)} placeholder={'mETH'}/>
+                      <button style={{ marginBottom: '5px' }} className="mt-3 btn btn-primary btn-block font-weight-bold" onClick={() => buyToken()}>
                           Direct buy
                       </button>
                       <a href="http://localhost:3001/">
