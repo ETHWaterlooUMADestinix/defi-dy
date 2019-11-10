@@ -10,14 +10,29 @@ export default function Home(props) {
     const { toBN } = web3.utils
 
     const [buyAmount, setBuyAmount] = useState(1)
+    // const [cmpData, setCmpData] = useState({borrowers: null, suppliers: null})
 
     const [chart, setChartOptions]= useState({
         options: {
-            chart: {
-                id: "basic-bar"
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'straight'
+            },
+            title: {
+                text: 'Borrowers',
+                align: 'left'
+            },
+            grid: {
+                row: {
+                    colors: ['#f3f3f3', 'transparent'],
+                    opacity: 0.5
+                },
             },
             xaxis: {
-                categories: ['jan', 'feb', 'mar', 'apr', 'jun', 'jul']
+                categories: ' ',
+                // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
             }
         },
         series: [
@@ -28,6 +43,70 @@ export default function Home(props) {
         ]
     })
 
+    const getGraph = () => {
+        const query = `{
+                borrowers(first: 20) {
+                    id
+                    requestId
+                    price
+                    exchangeVal
+                    tokenRatio
+                }
+                suppliers(first: 20) {
+                    id
+                    requestId
+                    price
+                    exchangeVal
+                    tokenRatio
+                }
+            }`
+        ;
+
+        const result = async () => await fetch('https://api.thegraph.com/subgraphs/name/sneh1999/deficmp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+                query
+            })
+        }).then(res => res.json())
+            .then(res => {
+                setChartOptions({
+                    options: {
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            curve: 'straight'
+                        },
+                        title: {
+                            text: 'Borrowers',
+                            align: 'left'
+                        },
+                        grid: {
+                            row: {
+                                colors: ['#f3f3f3', 'transparent'],
+                                opacity: 0.5
+                            },
+                        },
+                        xaxis: {
+                            categories: ' ',
+                            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                        }
+                    },
+                    series: [
+                        {
+                            name: "series-1",
+                            data: res.data.borrowers.map(el => Number(el.price))
+                        }
+                    ]
+                })
+            });
+
+        result()
+    }
 
     const [homeState, setHomeState] = useState({}) 
     const tokenizeDerivativeAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
@@ -46,6 +125,7 @@ export default function Home(props) {
             value: calculatedTransferValue
         });
     }
+    getGraph()
 
     useEffect(() => {
       const m = async () => {
@@ -109,7 +189,7 @@ export default function Home(props) {
                             options={chart.options}
                             series={chart.series}
                             height={300}
-                            type="bar"/>
+                            type="line"/>
                     </div>
                 </div>
 
