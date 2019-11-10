@@ -73,36 +73,36 @@ export default function Home(props) {
             })
         }).then(res => res.json())
             .then(res => {
-                setChartOptions({
-                    options: {
-                        dataLabels: {
-                            enabled: false
-                        },
-                        stroke: {
-                            curve: 'straight'
-                        },
-                        title: {
-                            text: 'Borrowers',
-                            align: 'left'
-                        },
-                        grid: {
-                            row: {
-                                colors: ['#f3f3f3', 'transparent'],
-                                opacity: 0.5
-                            },
-                        },
-                        xaxis: {
-                            categories: ' ',
-                            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                        }
-                    },
-                    series: [
-                        {
-                            name: "series-1",
-                            data: res.data.borrowers.map(el => Number(el.price))
-                        }
-                    ]
-                })
+                // setChartOptions({
+                //     options: {
+                //         dataLabels: {
+                //             enabled: false
+                //         },
+                //         stroke: {
+                //             curve: 'straight'
+                //         },
+                //         title: {
+                //             text: 'Borrowers',
+                //             align: 'left'
+                //         },
+                //         grid: {
+                //             row: {
+                //                 colors: ['#f3f3f3', 'transparent'],
+                //                 opacity: 0.5
+                //             },
+                //         },
+                //         xaxis: {
+                //             categories: ' ',
+                //             // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                //         }
+                //     },
+                //     series: [
+                //         {
+                //             name: "series-1",
+                //             data: res.data.borrowers.map(el => Number(el.price))
+                //         }
+                //     ]
+                // })
             });
 
         result()
