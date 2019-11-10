@@ -3,11 +3,29 @@ import AssetRowHeader from "../molecules/AssetRowHeader";
 import AssetRow from "../molecules/AssetRow";
 import TokenizedDerivative from '../../contracts/TokenizedDerivative'
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
-
+import Chart from "react-apexcharts";
 
 export default function Home(props) {
     const { web3 } = props
     const { toBN } = web3.utils
+
+    const [chart, setChartOptions]= useState({
+        options: {
+            chart: {
+                id: "basic-bar"
+            },
+            xaxis: {
+                categories: ['jan', 'feb', 'mar', 'apr', 'jun', 'jul']
+            }
+        },
+        series: [
+            {
+                name: "series-1",
+                data: [30, 40, 45, 50, 49, 60, 70, 91]
+            }
+        ]
+    })
+
 
     const [homeState, setHomeState] = useState({}) 
     const tokenizeDerivativeAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
@@ -91,24 +109,11 @@ export default function Home(props) {
                         <div className="font-weight-bold" style={{color: '#5FC5A6', fontSize: '1.4rem'}}>
                           Compound Finance Network Activity
                         </div>
-                        <VictoryChart
-                            theme={VictoryTheme.material}
-                            height={250}
-                        >
-                            <VictoryLine
-                                style={{
-                                    // data: { stroke: "#c43a31" },
-                                    // parent: { border: "1px solid #ccc"}
-                                }}
-                                data={[
-                                    { x: 1, y: 2 },
-                                    { x: 2, y: 3 },
-                                    { x: 3, y: 5 },
-                                    { x: 4, y: 4 },
-                                    { x: 5, y: 7 }
-                                ]}
-                            />
-                        </VictoryChart>
+                        <Chart
+                            options={chart.options}
+                            series={chart.series}
+                            type="bar"
+                            width="500"/>
                     </div>
                 </div>
             </section>
