@@ -6,7 +6,7 @@ export default function TheHeader() {
            <div align="center">
                  <img src="/logo.png" width={150} height={60} class="my-3"/>
             </div>
-            <div className="rounded text-white overflow-hidden d-flex align-items-center" style={{background: '#1b2638', height: '400px'}}>
+            <div className="rounded text-white overflow-hidden d-flex align-items-center" style={{background: '#1b2638', height: '300px'}}>
                 <div className="p-5">
                     <h1 className="ml-5" style={{flex:1, 'font-size': '2rem'}}>
                     Invest in companies, not speculation

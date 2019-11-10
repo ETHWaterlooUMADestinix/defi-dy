@@ -27,8 +27,8 @@ export default function AssetRow(props) {
             <div className="col col-1 p-3  text-right">
                 {props.locked}	
             </div>	
-            <div className="col col-2 p-3 text-right">	
-                10 days	
+            <div className="col col-2 p-3 text-right text-warning">
+                31 days
             </div>	
             <div className="col col-2 d-flex justify-content-end align-items-center">
                 <button className="p-2 btn-secondary rounded text-white px-4" style={{fontSize: '0.9rem'}}>

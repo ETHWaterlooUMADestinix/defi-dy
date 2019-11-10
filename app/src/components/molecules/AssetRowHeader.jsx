@@ -4,7 +4,7 @@ export default function AssetRowHeader() {
     return (	
         <div className="row bg-eth rounded text-white font-weight-bold text-left">	
             <div className="col col-1 p-3">	
-                Number	
+                Index
             </div>	
             <div className="col col-3 p-3">	
                 Name	
