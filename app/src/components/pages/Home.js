@@ -75,12 +75,12 @@ export default function Home(props) {
                         <div style={{color: '#6F7174', fontSize: '1.4rem'}}>2020 January 1</div>
                     </div>
                     <div className="bg-white rounded p-3 mt-3 shadow">
-                      <div className="font-weight-bold">Actions</div>
-                      <button style={{ marginBottom: '5px' }} className="btn btn-primary btn-block" onClick={() => buyToken()}>
+                      <div className="font-weight-bold mb-3">Actions</div>
+                      <button style={{ marginBottom: '5px' }} className="btn btn-primary btn-block font-weight-bold" onClick={() => buyToken()}>
                           Buy
                       </button>
                       <a href="http://localhost:3001/">
-                          <button class="btn btn-primary btn-block">
+                          <button class="btn btn-primary btn-block font-weight-bold">
                               Exchange
                           </button>
                       </a>
@@ -93,7 +93,7 @@ export default function Home(props) {
                         </div>
                         <VictoryChart
                             theme={VictoryTheme.material}
-                            height={247}
+                            height={250}
                         >
                             <VictoryLine
                                 style={{
@@ -112,11 +112,13 @@ export default function Home(props) {
                     </div>
                 </div>
             </section>
-            <AssetRowHeader/>	                
-            <AssetRow name="Compound DefiDy" index={1} category="Future Options (LIVE)" locked={homeState.tokenBalance || 0} web3={props.web3}/>
-            <AssetRow name="MakerDao Defidy" index={2} category="Coming  Soon" locked="--" web3={props.web3}/>
-            <AssetRow name="Aave  Defidy" index={3} category="Coming Soon" locked="--" web3={props.web3}/>
-            <AssetRow name="UniswapPools Defidy" index={4} category="Coming Soon" locked="--" web3={props.web3}/>
+            <div className="p-3">
+                <AssetRowHeader/>
+                <AssetRow name="Compound DefiDy" index={1} category="Future Options (LIVE)" locked={homeState.tokenBalance || 0} web3={props.web3}/>
+                <AssetRow name="MakerDao Defidy" index={2} category="Coming  Soon" locked="--" web3={props.web3}/>
+                <AssetRow name="Aave  Defidy" index={3} category="Coming Soon" locked="--" web3={props.web3}/>
+                <AssetRow name="UniswapPools Defidy" index={4} category="Coming Soon" locked="--" web3={props.web3}/>
+            </div>
         </main>
     )
 }

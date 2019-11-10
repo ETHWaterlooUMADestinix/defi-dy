@@ -14,24 +14,24 @@ export default function AssetRow(props) {
     }	
 
     return (	
-        <div className="row bg-white text-left">	
-            <div className="col col-1 p-3">	
+        <div className="row bg-white text-left shadow">
+            <div className="col col-1 p-3 font-weight-bold text-center">
                 {props.index}	
             </div>	
             <div className="col col-3 p-3">	
                 {props.name}	
             </div>	
-            <div className="col col-1 p-3">	
+            <div className="col col-3 p-3">
                 {props.category}	
             </div>	
-            <div className="col col-3 p-3  text-right">	
+            <div className="col col-1 p-3  text-right">
                 {props.locked}	
             </div>	
             <div className="col col-2 p-3 text-right">	
                 10 days	
             </div>	
-            <div styles="padding-bottom: 20px"className="col col-2 p-3 d-flex justify-content-center align-items-end">	
-                <button className="p-2 btn-primary">	
+            <div className="col col-2 d-flex justify-content-end align-items-center">
+                <button className="p-2 btn-secondary rounded text-white px-4" style={{fontSize: '0.9rem'}}>
                    Select
                 </button>	
                 {/*<button className="p-2 btn-warning">*/}	

@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+
+$primary: rgb(88, 106, 236);
+$secondary: rgb(238, 116, 148);
+@import '~bootstrap/scss/bootstrap.scss';
