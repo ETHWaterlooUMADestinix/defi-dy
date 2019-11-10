@@ -75,20 +75,42 @@ export default function Home(props) {
     return (
         <main className="container">
             <section className="row text-left">
-                <div className="col col-4">
+                <div className="col-4">
                     <div className="bg-white rounded p-3 shadow">
                         <div className="font-weight-bold">Asset name</div>
                         <div style={{color: '#FF6895', fontSize: '1.4rem'}}>{homeState.tokenName || 'Not connected to web3 yet'}</div>
                     </div>
-                    <div className="bg-white rounded p-3 mt-3 shadow">
+                </div>
+
+                <div className="col-4">
+                    <div className="bg-white rounded p-3 shadow">
                         <div className="font-weight-bold">Holdings</div>
                         <div style={{color: '#5666F6', fontSize: '1.4rem'}}>{homeState.tokenBalance || 0}</div>
                     </div>
-                    <div className="bg-white rounded p-3 mt-3 shadow">
+                </div>
+
+                <div className="col-4">
+                    <div className="bg-white rounded p-3 shadow">
                         <div className="font-weight-bold">Type</div>
                         <div style={{color: '#6F7174', fontSize: '1.4rem'}}>Future Options (LIVE)</div>
                     </div>
-                    <div className="bg-white rounded p-3 mt-3 shadow">
+                </div>
+            </section>
+            <section className="row text-left mt-3">
+                <div className="col col-8">
+                    <div className="bg-white rounded p-3 shadow">
+                        <div className="font-weight-bold mb-3" style={{color: '#5FC5A6', fontSize: '1.4rem'}}>
+                            Compound Finance Network Activity
+                        </div>
+                        <Chart
+                            options={chart.options}
+                            series={chart.series}
+                            type="bar"/>
+                    </div>
+                </div>
+
+                <div className="col col-4">
+                    <div className="bg-white rounded p-3 shadow">
                         <div className="font-weight-bold">Expiring</div>
                         <div style={{color: '#6F7174', fontSize: '1.4rem'}}>2020 January 1</div>
                     </div>
@@ -102,18 +124,6 @@ export default function Home(props) {
                               Peer exchange
                           </button>
                       </a>
-                    </div>
-                </div>
-                <div className="col col-8">
-                    <div className="bg-white rounded p-3 shadow">
-                        <div className="font-weight-bold" style={{color: '#5FC5A6', fontSize: '1.4rem'}}>
-                          Compound Finance Network Activity
-                        </div>
-                        <Chart
-                            options={chart.options}
-                            series={chart.series}
-                            type="bar"
-                            width="500"/>
                     </div>
                 </div>
             </section>
