@@ -3,7 +3,8 @@ import React from 'react'
 export default function TheHeader() {
     return (
         <header className="container text-left">
-           <div align="center">
+           <div align="center" className="d-flex align-items-center justify-content-center">
+                 <img src="/icon.png" height={40} class="my-3 mr-3"/>
                  <img src="/logo.png" width={150} height={60} class="my-3"/>
             </div>
             <div className="rounded text-white overflow-hidden d-flex align-items-center" style={{background: '#1b2638', height: '300px'}}>

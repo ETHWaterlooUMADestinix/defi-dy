@@ -34,7 +34,7 @@ export default function Home(props) {
     );
 
   const buyToken = () => {
-        const tokenDecimals = toBN(17);
+        const tokenDecimals = toBN(18);
         const tokenAmountToTransfer = toBN(1);
         const calculatedTransferValue = web3.utils.toHex(tokenAmountToTransfer.mul(web3.utils.toBN(10).pow(tokenDecimals)));
 
@@ -74,6 +74,7 @@ export default function Home(props) {
 
     return (
         <main className="container">
+            <h5 className="text-left mb-3">Token detail</h5>
             <section className="row text-left">
                 <div className="col-4">
                     <div className="bg-white rounded p-3 shadow">
@@ -105,6 +106,7 @@ export default function Home(props) {
                         <Chart
                             options={chart.options}
                             series={chart.series}
+                            height={300}
                             type="bar"/>
                     </div>
                 </div>
@@ -127,6 +129,8 @@ export default function Home(props) {
                     </div>
                 </div>
             </section>
+
+            <h5 className="text-left mt-4">Token list</h5>
             <div className="p-3">
                 <AssetRowHeader/>
                 <AssetRow name="Compound DefiDy" index={1} category="Future Options (LIVE)" locked={homeState.tokenBalance || 0} web3={props.web3}/>
