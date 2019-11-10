@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-
+import AssetRowHeader from "../molecules/AssetRowHeader";	
+import AssetRow from "../molecules/AssetRow";
 import TokenizedDerivative from '../../contracts/TokenizedDerivative'
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
 
@@ -8,22 +9,7 @@ export default function Home(props) {
     const { web3 } = props
     const { toBN } = web3.utils
 
-    const [homeState, setHomeState] = useState({})
-    const result = await fetch('https://api.thegraph.com/subgraphs/name/sneh1999/deficmp', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify({
-        query
-      })
-    }).then(r => r.json())
-      .then(data => data)
-      .catch(error => console.log(error))
-     
-    var keys = Object.values(result)
-    var keysmap = Object.values(Object.values(keys[0]))[0][0]   
+    const [homeState, setHomeState] = useState({}) 
     const tokenizeDerivativeAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
     const tokenizedDerivativeContract = new web3.eth.Contract(
         TokenizedDerivative.abi, tokenizeDerivativeAddress
@@ -66,6 +52,7 @@ export default function Home(props) {
 
       m()
     })
+
 
     return (
         <main className="container">
@@ -125,6 +112,11 @@ export default function Home(props) {
                     </div>
                 </div>
             </section>
+            <AssetRowHeader/>	                
+            <AssetRow name="Compound DefiDy" index={1} category="Future Options (LIVE)" locked={homeState.tokenBalance || 0} web3={props.web3}/>
+            <AssetRow name="MakerDao Defidy" index={2} category="Coming  Soon" locked="--" web3={props.web3}/>
+            <AssetRow name="Aave  Defidy" index={3} category="Coming Soon" locked="--" web3={props.web3}/>
+            <AssetRow name="UniswapPools Defidy" index={4} category="Coming Soon" locked="--" web3={props.web3}/>
         </main>
     )
 }
