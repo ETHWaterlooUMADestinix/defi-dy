@@ -5,6 +5,8 @@ import TokenizedDerivative from '../../contracts/TokenizedDerivative'
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
 import Chart from "react-apexcharts";
 
+let tmp = false
+
 export default function Home(props) {
     const { web3 } = props
     const { toBN } = web3.utils
@@ -73,40 +75,47 @@ export default function Home(props) {
             })
         }).then(res => res.json())
             .then(res => {
-                // setChartOptions({
-                //     options: {
-                //         dataLabels: {
-                //             enabled: false
-                //         },
-                //         stroke: {
-                //             curve: 'straight'
-                //         },
-                //         title: {
-                //             text: 'Borrowers',
-                //             align: 'left'
-                //         },
-                //         grid: {
-                //             row: {
-                //                 colors: ['#f3f3f3', 'transparent'],
-                //                 opacity: 0.5
-                //             },
-                //         },
-                //         xaxis: {
-                //             categories: ' ',
-                //             // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                //         }
-                //     },
-                //     series: [
-                //         {
-                //             name: "series-1",
-                //             data: res.data.borrowers.map(el => Number(el.price))
-                //         }
-                //     ]
-                // })
+                setChartOptions({
+                    options: {
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            curve: 'straight'
+                        },
+                        title: {
+                            text: 'Governed by Compound protocol performance',
+                            align: 'left'
+                        },
+                        grid: {
+                            row: {
+                                colors: ['#f3f3f3', 'transparent'],
+                                opacity: 0.5
+                            },
+                        },
+                        xaxis: {
+                            categories: ' ',
+                            // categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                        }
+                    },
+                    series: [
+                        {
+                            name: "series-1",
+                            data: res.data.borrowers.map(el => (Number(el.exchangeVal)/10**18))
+                        }
+                    ]
+                })
             });
 
         result()
     }
+
+
+    if (!tmp) {
+        getGraph()
+        tmp = true
+    }
+
 
     const [homeState, setHomeState] = useState({}) 
     const tokenizeDerivativeAddress = "0x6c8cA9170FE3B3bf3BcD50c6ACf254F1Be06b0E1";
@@ -125,7 +134,6 @@ export default function Home(props) {
             value: calculatedTransferValue
         });
     }
-    getGraph()
 
     useEffect(() => {
       const m = async () => {
@@ -183,7 +191,7 @@ export default function Home(props) {
                 <div className="col col-8">
                     <div className="bg-white rounded p-3 shadow">
                         <div className="font-weight-bold mb-3" style={{color: '#5FC5A6', fontSize: '1.4rem'}}>
-                            Compound Finance Network Activity
+                            Exchange value of DaiCmp
                         </div>
                         <Chart
                             options={chart.options}
