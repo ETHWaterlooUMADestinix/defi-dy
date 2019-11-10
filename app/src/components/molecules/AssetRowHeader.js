@@ -16,7 +16,7 @@ export default function AssetRowHeader() {
                 Locked
             </div>
             <div className="col col-2 p-3 text-right">
-                1 Day %
+                Expires
             </div>
             <div className="col col-2 p-3 text-right">
                 Actions
