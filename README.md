@@ -1,5 +1,5 @@
 # defi-dy
-- a derivative of defi
+- Derivatives of Defi
 
 ### Basic website
 ```bash
