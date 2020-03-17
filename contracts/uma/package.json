@@ -35,7 +35,7 @@
     "gitbook-cli": "^2.3.2",
     "gmail-send": "^1.2.14",
     "lodash.startcase": "^4.4.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.2",
     "moment": "^2.24.0",
     "node-fetch": "^2.3.0",
     "openzeppelin-solidity": "2.3.0",
