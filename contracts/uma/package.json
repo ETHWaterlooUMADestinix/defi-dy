@@ -30,7 +30,7 @@
     "dotenv": "^6.2.0",
     "eslint": "5.16.0",
     "eth-crypto": "^1.3.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "ganache-cli": "^6.4.3",
     "gitbook-cli": "^2.3.2",
     "gmail-send": "^1.2.14",
